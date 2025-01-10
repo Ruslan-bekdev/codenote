@@ -12,6 +12,7 @@
     "vite": "^6.0.5"
   },
   "dependencies": {
-    "@shoelace-style/shoelace": "^2.19.1"
+    "@shoelace-style/shoelace": "^2.19.1",
+    "bcryptjs": "^2.4.3"
   }
 }

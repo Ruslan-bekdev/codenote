@@ -104,6 +104,51 @@ export default {
               'Вставляем в редактор поле для кода и нажимаем активейт\n'
         },
         {
+          summary: 'Реализация хашированного пароля на сайт (средняя защита. Опытные кодеры легко взломают)',
+          content: 'Создаем js файл и пишем туда\n' +
+              'import bcrypt from "bcryptjs";\n' +
+              '\n' +
+              'const storedHash = "СЮДА СВОЙ ХЕШ";\n' +
+              '\n' +
+              'function authenticateUser() {\n' +
+              '    const userPassword = prompt("Введите пароль для доступа:");\n' +
+              '\n' +
+              '    if (!userPassword) {\n' +
+              '        document.body.innerHTML = "<h1>Доступ запрещен</h1>";\n' +
+              '        return;\n' +
+              '    }\n' +
+              '\n' +
+              '    const isMatch = bcrypt.compareSync(userPassword, storedHash);\n' +
+              '\n' +
+              '    if (isMatch) {\n' +
+              '        alert("Пароль верный! Добро пожаловать.");\n' +
+              '    } else {\n' +
+              '        alert("Неверный пароль! Доступ запрещен.");\n' +
+              '        document.body.innerHTML = "<h1>Доступ запрещен</h1>";\n' +
+              '    }\n' +
+              '}\n' +
+              '\n' +
+              'Откуда взять Хеш?\n' +
+              'выполняем npm i bcryptjs\n' +
+              'выполняем команду node и втсавляем туда это:\n' +
+              'export default authenticateUser;' +
+              'npm install bcryptjs\n' +
+              'const bcrypt = require("bcryptjs");\n' +
+              'const password = "ПАРОЛЬ СЮДА СВОЙ";\n' +
+              'bcrypt.hash(password, 10, function (err, hash) {\n' +
+              '  console.log("Хэш пароля:", hash);\n' +
+              '});\n' +
+              'Он даст хеш, который и нужно вставить в созданный js файл\n' +
+              'Затем создаем другой js файл и вставляем туда\n' +
+              'import authenticateUser from "./ТОТ САМЫЙ ПЕРВЫЙ JS ФАЙЛ.js";\n' +
+              '\n' +
+              'document.addEventListener("DOMContentLoaded", () => {\n' +
+              '    authenticateUser();\n' +
+              '});\n' +
+              '\n' +
+              'Если нужно изменить пароль, то просто меняем его и вставляем в node, меняя хеш'
+        },
+        {
             summary: 'Сочетание клавиш',
             content: 'Ctrl + Shift + F или Shift * 2\n' +
                 'Поиск по коду проекта\n' +
