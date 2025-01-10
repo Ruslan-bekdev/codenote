@@ -1,14 +1,14 @@
 const data = import.meta.glob('./dataBase/*.js');
 
 const allData = (async () => {
-    const collectedData = []; // Инициализируем пустой массив
+    const collectedData = [];
 
     for (const path in data) {
         const module = await data[path]();
-        collectedData.push(module.default); // Добавляем каждый экспортированный объект в массив
+        collectedData.push(module.default);
     }
 
-    return collectedData; // Возвращаем массив
+    return collectedData;
 })();
 
 export default allData;

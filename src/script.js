@@ -17,6 +17,17 @@ const createNavigation = (allData) => {
         li.appendChild(link);
         navList.appendChild(li);
     });
+
+    document.getElementById('toggle-all').addEventListener('click', () => {
+        const allDetails = document.querySelectorAll('sl-details');
+        const shouldOpen = Array.from(allDetails).some(details => !details.open);
+
+        allDetails.forEach(details => {
+            details.open = shouldOpen;
+        });
+
+        document.getElementById('toggle-all').textContent = shouldOpen ? 'Закрыть все' : 'Открыть все';
+    });
 }
 
 const createSections = (allData) => {
@@ -24,9 +35,11 @@ const createSections = (allData) => {
         const section = document.createElement('section');
 
         section.id = item.id;
+        section.className = 'section';
 
         const title = document.createElement('h2');
         title.textContent = item.title;
+        title.className = 'title';
         section.appendChild(title);
 
         item.items.forEach((item) => {
@@ -39,6 +52,7 @@ const createSections = (allData) => {
 
             const content = document.createElement('div');
             content.textContent = item.content;
+            content.style.whiteSpace = 'pre-wrap';
             details.appendChild(content);
 
             section.appendChild(details);

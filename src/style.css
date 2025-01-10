@@ -20,13 +20,16 @@ body {
     color: var(--color-text);
     font-family: var(--font-family);
     margin: 0;
-    padding: 0;
-    padding-top: var(--nav-height);
+    padding: var(--nav-height) 0 50vh 0;
 }
 
-#detailsContainer1,
-#detailsContainer2 {
+.title {
+    text-align: center;
+}
+
+.section{
     margin: var(--margin-content);
+    padding-top: var(--nav-height);
 }
 
 sl-details {
@@ -60,7 +63,14 @@ header {
     z-index: 1000;
 }
 
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
 nav ul {
+    width: 100%;
     display: flex;
     justify-content: center;
     list-style-type: none;
