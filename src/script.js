@@ -1,9 +1,14 @@
-import detailsData from './detailsData.json';
+import allDataPromise from './dataCollector';
 
 const navList = document.getElementById('nav-list');
 const mainContent = document.getElementById('main-content');
 
-const createNavigation = (navigation) => {
+const createNavigation = (allData) => {
+    const navigation = [];
+    allData.map((item, index) => {
+        navigation.push({id: item.id, title: item.navTitle});
+    })
+
     navigation.forEach((navItem) => {
         const li = document.createElement('li');
         const link = document.createElement('a');
@@ -14,16 +19,17 @@ const createNavigation = (navigation) => {
     });
 }
 
-const createSections = (sections) => {
-    for (const [id, sectionData] of Object.entries(sections)) {
+const createSections = (allData) => {
+    allData.map((item, index) => {
         const section = document.createElement('section');
-        section.id = id;
+
+        section.id = item.id;
 
         const title = document.createElement('h2');
-        title.textContent = sectionData.title;
+        title.textContent = item.title;
         section.appendChild(title);
 
-        sectionData.items.forEach((item) => {
+        item.items.forEach((item) => {
             const details = document.createElement('sl-details');
 
             const summary = document.createElement('div');
@@ -39,8 +45,10 @@ const createSections = (sections) => {
         });
 
         mainContent.appendChild(section);
-    }
+    })
 }
 
-createNavigation(detailsData.navigation);
-createSections(detailsData.sections);
+allDataPromise.then((allData) => {
+    createNavigation(allData);
+    createSections(allData);
+});

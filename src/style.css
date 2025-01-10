@@ -24,8 +24,8 @@ body {
     padding-top: var(--nav-height);
 }
 
-#details-container1,
-#details-container2 {
+#detailsContainer1,
+#detailsContainer2 {
     margin: var(--margin-content);
 }
 
