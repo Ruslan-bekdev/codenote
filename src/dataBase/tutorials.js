@@ -80,6 +80,7 @@ export default {
                 'В scripts прописать следующие ключи\n' +
                 '"deploy": "gh-pages -d build",\n' +
                 '"predeploy": "npm run build"\n' +
+                'Закомитить все и запушить\n' +
                 '\n' +
                 '3.Деплой\n' +
                 'npm run deploy\n' +
