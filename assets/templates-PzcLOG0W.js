@@ -9,3 +9,4 @@ const t={title:"Шаблоны",navTitle:"Шаблоны",id:"templates",items:[
         },
     ]
 }`}]};export{t as default};
+//# sourceMappingURL=templates-PzcLOG0W.js.map
