@@ -93,6 +93,42 @@ export default {
                 'в элемент BrowserRouter из index.js надо добавить селектор basename={process.env.PUBLIC_URL',
         },
         {
+            summary: 'Деплой на Гитхаб пейджес vite vanilla js проекта',
+            content: '1.Первичный деплой\n' +
+                'Настройки-pages:\n' +
+                'Выбрать главную ветвь и сейв\n' +
+                'Скопировать ссылку которая появится\n' +
+                '\n' +
+                '2.Настройка проекта\n' +
+                'npm i gh-pages\n' +
+                'В scripts прописать следующие ключи после ключа "dev"\n' +
+                '"deploy": "gh-pages -d dist",\n' +
+                '"predeploy": "npm run build"\n' +
+                'указать в файле vite.config.js ключ base с ссылкой в значении (если такого файла нет - создать)\n' +
+                'Например так' +
+                'base: \'https://ruslan-bekdev.github.io/codenote/\',\n' +
+                'В итоге должно быть так import { defineConfig } from \'vite\';\n' +
+                '\n' +
+                'export default defineConfig({\n' +
+                '    root: \'./\',\n' +
+                '    base: \'https://ruslan-bekdev.github.io/codenote/\',\n' +
+                '    build: {\n' +
+                '        outDir: \'dist\',\n' +
+                '        sourcemap: true,\n' +
+                '    },\n' +
+                '    server: {\n' +
+                '        port: 3000,\n' +
+                '    },\n' +
+                '});\n' +
+                'Закомитить все и запушить\n' +
+                '\n' +
+                '3.Деплой\n' +
+                'npm run deploy\n' +
+                'Настройка-pages:\n' +
+                'Поменять ветвь на gh-pages\n' +
+                'Подождать'
+        },
+        {
           summary: 'Установка JetBrains программ и обход лицензии',
           content: 'Установить с нуля свежий редактор\n' +
               'Перейти на сайт https://3.jetbra.in\n' +

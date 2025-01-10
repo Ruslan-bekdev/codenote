@@ -70,6 +70,29 @@ export default {
                 'добавить type="module" для срикпт тега.\n' +
                 'пояснение:\n' +
                 'дело в том, что импорты и экспорты можно использовать только в модульных скриптах',
-        }
+        },
+        {
+          summary: 'Ошибка при деплое vite проекта',
+          content: '' +
+              '1. Не удалось воспроизвести медиа. Нет декодеров для запрошенных форматов: text/html\n' +
+              '2. HTTP «Content-Type» типа «text/html» не поддерживается. Не удалось загрузить медиаресурс http://localhost:5173/. \n' +
+              '\n' +
+              'РЕШЕНИЕ' +
+              'если есть файл vite.config.js то указать там base с ссылкой на сайт.\n' +
+              'например так\n' +
+              'import { defineConfig } from \'vite\';\n' +
+              '\n' +
+              'export default defineConfig({\n' +
+              '    root: \'./\',\n' +
+              '    base: \'https://ruslan-bekdev.github.io/codenote/\',\n' +
+              '    build: {\n' +
+              '        outDir: \'dist\',\n' +
+              '        sourcemap: true,\n' +
+              '    },\n' +
+              '    server: {\n' +
+              '        port: 3000,\n' +
+              '    },\n' +
+              '});\n',
+        },
     ]
 };
