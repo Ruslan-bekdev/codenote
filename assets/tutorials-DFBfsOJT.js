@@ -71,7 +71,38 @@ npm run deploy
 
 Замечания!
 Если в проекте есть Браузер Роутер, то:
-в элемент BrowserRouter из index.js надо добавить селектор basename={process.env.PUBLIC_URL`},{summary:"Установка JetBrains программ и обход лицензии",content:`Установить с нуля свежий редактор
+в элемент BrowserRouter из index.js надо добавить селектор basename={process.env.PUBLIC_URL`},{summary:"Деплой на Гитхаб пейджес vite vanilla js проекта",content:`1.Первичный деплой
+Настройки-pages:
+Выбрать главную ветвь и сейв
+Скопировать ссылку которая появится
+
+2.Настройка проекта
+npm i gh-pages
+В scripts прописать следующие ключи после ключа "dev"
+"deploy": "gh-pages -d dist",
+"predeploy": "npm run build"
+указать в файле vite.config.js ключ base с ссылкой в значении (если такого файла нет - создать)
+Например такbase: 'https://ruslan-bekdev.github.io/codenote/',
+В итоге должно быть так import { defineConfig } from 'vite';
+
+export default defineConfig({
+    root: './',
+    base: 'https://ruslan-bekdev.github.io/codenote/',
+    build: {
+        outDir: 'dist',
+        sourcemap: true,
+    },
+    server: {
+        port: 3000,
+    },
+});
+Закомитить все и запушить
+
+3.Деплой
+npm run deploy
+Настройка-pages:
+Поменять ветвь на gh-pages
+Подождать`},{summary:"Установка JetBrains программ и обход лицензии",content:`Установить с нуля свежий редактор
 Перейти на сайт https://3.jetbra.in
 Перейти на любой онлайн сервер
 Установить архив, показавшийся сверху сайта jetbra.zip
@@ -124,4 +155,4 @@ document.addEventListener("DOMContentLoaded", () => {
 Поиск по коду проекта
 Ctrl + Shift + Alt + J
 Выделить сразу много текста`}]};export{n as default};
-//# sourceMappingURL=tutorials-CZJygG4X.js.map
+//# sourceMappingURL=tutorials-DFBfsOJT.js.map

@@ -48,5 +48,23 @@ origin: Это имя удалённого репозитория (по умол
 РЕШЕНИЕ
 добавить type="module" для срикпт тега.
 пояснение:
-дело в том, что импорты и экспорты можно использовать только в модульных скриптах`}]};export{n as default};
-//# sourceMappingURL=errors-BzIv8QFG.js.map
+дело в том, что импорты и экспорты можно использовать только в модульных скриптах`},{summary:"Ошибка при деплое vite проекта",content:`1. Не удалось воспроизвести медиа. Нет декодеров для запрошенных форматов: text/html
+2. HTTP «Content-Type» типа «text/html» не поддерживается. Не удалось загрузить медиаресурс http://localhost:5173/. 
+
+РЕШЕНИЕесли есть файл vite.config.js то указать там base с ссылкой на сайт.
+например так
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+    root: './',
+    base: 'https://ruslan-bekdev.github.io/codenote/',
+    build: {
+        outDir: 'dist',
+        sourcemap: true,
+    },
+    server: {
+        port: 3000,
+    },
+});
+`}]};export{n as default};
+//# sourceMappingURL=errors-CdjJMbqp.js.map
