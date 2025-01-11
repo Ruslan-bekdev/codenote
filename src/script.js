@@ -1,5 +1,7 @@
 import allDataPromise from './dataCollector';
 
+const header = document.querySelector('header');
+const nav = document.querySelector('nav');
 const navList = document.getElementById('nav-list');
 const mainContent = document.getElementById('main-content');
 
@@ -18,7 +20,13 @@ const createNavigation = (allData) => {
         navList.appendChild(li);
     });
 
-    document.getElementById('toggle-all').addEventListener('click', () => {
+    const toggleAll = document.createElement('sl-button');
+    toggleAll.id = 'toggle-all';
+    toggleAll.variant = 'text';
+    toggleAll.size = 'medium';
+    toggleAll.innerText = 'Открыть всё';
+    nav.appendChild(toggleAll)
+    toggleAll.addEventListener('click', () => {
         const allDetails = document.querySelectorAll('sl-details');
         const shouldOpen = Array.from(allDetails).some(details => !details.open);
 
@@ -27,6 +35,17 @@ const createNavigation = (allData) => {
         });
 
         document.getElementById('toggle-all').textContent = shouldOpen ? 'Закрыть все' : 'Открыть все';
+    });
+
+
+    const toggleMenu = document.createElement('sl-button');
+    toggleMenu.id = 'toggle-menu';
+    toggleMenu.variant = 'text';
+    toggleMenu.size = 'medium';
+    toggleMenu.innerText = '=';
+    header.prepend(toggleMenu);
+    toggleMenu.addEventListener('click', () => {
+        nav.classList.toggle('closed');
     });
 }
 

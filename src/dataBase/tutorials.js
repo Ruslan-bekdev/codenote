@@ -186,6 +186,18 @@ export default {
               'Если нужно изменить пароль, то просто меняем его и вставляем в node, меняя хеш'
         },
         {
+            summary: 'Переменные в ванильном CSS',
+            content: ':root {\n' +
+                '    --example-var-name: "example value";\n' +
+                '    --exampleVarName: "example value"\n' +
+                '}\n' +
+                '\n' +
+                '.exampleClassname {\n' +
+                '    color: var(--example-var-name);\n' +
+                '    background-color: var(--exampleVarName);\n' +
+                '}'
+        },
+        {
             summary: 'Сочетание клавиш',
             content: 'Ctrl + Shift + F или Shift * 2\n' +
                 'Поиск по коду проекта\n' +
