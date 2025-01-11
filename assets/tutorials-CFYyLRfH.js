@@ -151,8 +151,16 @@ document.addEventListener("DOMContentLoaded", () => {
     authenticateUser();
 });
 
-Если нужно изменить пароль, то просто меняем его и вставляем в node, меняя хеш`},{summary:"Сочетание клавиш",content:`Ctrl + Shift + F или Shift * 2
+Если нужно изменить пароль, то просто меняем его и вставляем в node, меняя хеш`},{summary:"Переменные в ванильном CSS",content:`:root {
+    --example-var-name: "example value";
+    --exampleVarName: "example value"
+}
+
+.exampleClassname {
+    color: var(--example-var-name);
+    background-color: var(--exampleVarName);
+}`},{summary:"Сочетание клавиш",content:`Ctrl + Shift + F или Shift * 2
 Поиск по коду проекта
 Ctrl + Shift + Alt + J
 Выделить сразу много текста`}]};export{n as default};
-//# sourceMappingURL=tutorials-DFBfsOJT.js.map
+//# sourceMappingURL=tutorials-CFYyLRfH.js.map
