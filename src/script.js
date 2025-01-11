@@ -2,13 +2,16 @@ import allDataPromise from './dataCollector';
 
 const header = document.querySelector('header');
 const nav = document.querySelector('nav');
-const navList = document.getElementById('nav-list');
-const mainContent = document.getElementById('main-content');
+const navList = document.querySelector('#navList');
+const mainContent = document.querySelector('#mainContent');
 
 const createNavigation = (allData) => {
     const navigation = [];
-    allData.map((item, index) => {
-        navigation.push({id: item.id, title: item.navTitle});
+    allData.map((item) => {
+        navigation.push({
+            id: item.id,
+            title: item.navTitle
+        });
     })
 
     navigation.forEach((navItem) => {
@@ -21,7 +24,7 @@ const createNavigation = (allData) => {
     });
 
     const toggleAll = document.createElement('sl-button');
-    toggleAll.id = 'toggle-all';
+    toggleAll.id = 'toggleAll';
     toggleAll.variant = 'text';
     toggleAll.size = 'medium';
     toggleAll.innerText = 'Открыть всё';
@@ -34,7 +37,9 @@ const createNavigation = (allData) => {
             details.open = shouldOpen;
         });
 
-        document.getElementById('toggle-all').textContent = shouldOpen ? 'Закрыть все' : 'Открыть все';
+        document.querySelector('#toggleAll').textContent = shouldOpen
+            ?'Закрыть все'
+            :'Открыть все';
     });
 
 
@@ -50,9 +55,8 @@ const createNavigation = (allData) => {
 }
 
 const createSections = (allData) => {
-    allData.map((item, index) => {
+    allData.map((item) => {
         const section = document.createElement('section');
-
         section.id = item.id;
         section.className = 'section';
 
