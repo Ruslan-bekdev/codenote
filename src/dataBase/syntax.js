@@ -66,5 +66,19 @@ export default {
                 "\n" +
                 "import assetUrl from './file.png?asset';"
         },
+        {
+          summary: 'css',
+          content: 'COMPOSES' +
+              '.imageDefault {\n' +
+              '    width: auto;\n' +
+              '    height: auto;\n' +
+              '    max-width: 100%;\n' +
+              '    max-height: 100%;\n' +
+              '}\n' +
+              '.modalImage img {\n' +
+              '    object-fit: contain;\n' +
+              '    composes: imageDefault;\n' +
+              '}\n\n'
+        },
     ]
 }

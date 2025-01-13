@@ -121,3 +121,9 @@ nav a:hover {
         margin: 10px 0;
     }
 }
+
+.flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
