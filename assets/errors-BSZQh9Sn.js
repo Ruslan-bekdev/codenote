@@ -66,5 +66,8 @@ export default defineConfig({
         port: 3000,
     },
 });
+`},{summary:"Если git push не работает (Не изменяет ничего в гитхабе, но ошибок нет)",content:`РЕШЕНИЕНужно войти в аккаунт.
+Указать почту редактору ГЛОБАЛЬНО чтобы на другие проекты тоже распространялось
+git config --global user.email "toopikoliko2@gmail.com"
 `}]};export{n as default};
-//# sourceMappingURL=errors-CdjJMbqp.js.map
+//# sourceMappingURL=errors-BSZQh9Sn.js.map
