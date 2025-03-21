@@ -69,5 +69,42 @@ export default defineConfig({
 `},{summary:"Если git push не работает (Не изменяет ничего в гитхабе, но ошибок нет)",content:`РЕШЕНИЕНужно войти в аккаунт.
 Указать почту редактору ГЛОБАЛЬНО чтобы на другие проекты тоже распространялось
 git config --global user.email "toopikoliko2@gmail.com"
+`},{summary:"Ошибка при деплое vite проекта ещё одна",content:`Fatal process out of memory: Zone Allocation failed
+<--- Last few GCs --->
+[3792:00000142F4241000]     2340 ms: Scavenge 91.2 (107.8) -> 77.5 (108.8) MB, pooled: 0 MB, 3.45 / 0.00 ms  (average mu = 0.973, current mu = 0.973) allocation failure;
+[3792:00000142F4241000]     2404 ms: Scavenge 92.4 (109.1) -> 78.4 (110.6) MB, pooled: 0 MB, 2.64 / 0.00 ms  (average mu = 0.973, current mu = 0.973) allocation failure;
+
+<--- JS stacktrace --->
+FATAL ERROR: Zone Allocation failed - process out of memory
+----- Native stack trace -----
+ 1: 00007FF7A30B8F3D
+ 1: 00007FF7A30B8F3D
+ 2: 00007FF7A2F9956F
+ 3: 00007FF7A4357126
+ 2: 00007FF7A2F9956F
+ 3: 00007FF7A4357126
+ 4: 00007FF7A3D06631
+ 5: 00007FF7A37AC5DB
+ 6: 00007FF7A369A143
+ 7: 00007FF7A36A1849
+ 8: 00007FF7A367193A
+ 9: 00007FF7A36A1181
+10: 00007FF7A36A9B96
+11: 00007FF7A36B3CBB
+12: 00007FF7A3685E5F
+13: 00007FF7A36D2A18
+14: 00007FF7A36D2E64
+15: 00007FF7A36B7901
+16: 00007FF7A3C82124
+17: 00007FF7A36B8E42
+18: 00007FF7A3F11E15
+19: 00007FF7A2F9BE09
+20: 00007FF7A311AA43
+21: 00007FF7A4A95A9E
+22: 00007FF802A77034 BaseThreadInitThunk+20
+23: 00007FF802F62651
+
+РЕШЕНИЕОшибка указывает на то, что данных слишком много. Нужно просто очистить кэш 
+npm cache clean --force
 `}]};export{n as default};
-//# sourceMappingURL=errors-BSZQh9Sn.js.map
+//# sourceMappingURL=errors-BSCjPkqK.js.map
