@@ -153,15 +153,7 @@ export default {
               'npm rebuild esbuild\n',
         },
         {
-          summary: 'Если git push не работает (Не изменяет ничего в гитхабе, но ошибок нет)',
-          content: '' +
-              'РЕШЕНИЕ\n' +
-              'Нужно войти в аккаунт.\n' +
-              'Указать почту редактору ГЛОБАЛЬНО чтобы на другие проекты тоже распространялось\n' +
-              'git config --global user.email "toopikoliko2@gmail.com"\n',
-        },
-        {
-          summary: 'Ошибка при деплое vite проекта ещё одна',
+          summary: 'Ошибка при деплое vite проекта 3',
           content: 'Fatal process out of memory: Zone Allocation failed\n' +
               '<--- Last few GCs --->\n' +
               '[3792:00000142F4241000]     2340 ms: Scavenge 91.2 (107.8) -> 77.5 (108.8) MB, pooled: 0 MB, 3.45 / 0.00 ms  (average mu = 0.973, current mu = 0.973) allocation failure;\n' +
@@ -200,6 +192,14 @@ export default {
               'РЕШЕНИЕ\n' +
               'Ошибка указывает на то, что данных слишком много. Нужно просто очистить кэш \n' +
               'npm cache clean --force\n',
+        },
+        {
+            summary: 'Если git push не работает (Не изменяет ничего в гитхабе, но ошибок нет)',
+            content: '' +
+                'РЕШЕНИЕ\n' +
+                'Нужно войти в аккаунт.\n' +
+                'Указать почту редактору ГЛОБАЛЬНО чтобы на другие проекты тоже распространялось\n' +
+                'git config --global user.email "toopikoliko2@gmail.com"\n',
         },
         {
           summary: 'Фантомные языки',
