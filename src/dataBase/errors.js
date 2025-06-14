@@ -1,5 +1,5 @@
 export default {
-    title: "Ошибки и их решения",
+    title: "Ошибки и решения",
     navTitle: "Ошибки",
     id: "errors",
     items: [
