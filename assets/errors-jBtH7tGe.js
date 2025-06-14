@@ -113,11 +113,7 @@ npm install
 Принудительно переустановить esbuild
 Иногда esbuild нужно пересобрать для правильной архитектуры:
 npm rebuild esbuild
-`},{summary:"Если git push не работает (Не изменяет ничего в гитхабе, но ошибок нет)",content:`РЕШЕНИЕ
-Нужно войти в аккаунт.
-Указать почту редактору ГЛОБАЛЬНО чтобы на другие проекты тоже распространялось
-git config --global user.email "toopikoliko2@gmail.com"
-`},{summary:"Ошибка при деплое vite проекта ещё одна",content:`Fatal process out of memory: Zone Allocation failed
+`},{summary:"Ошибка при деплое vite проекта 3",content:`Fatal process out of memory: Zone Allocation failed
 <--- Last few GCs --->
 [3792:00000142F4241000]     2340 ms: Scavenge 91.2 (107.8) -> 77.5 (108.8) MB, pooled: 0 MB, 3.45 / 0.00 ms  (average mu = 0.973, current mu = 0.973) allocation failure;
 [3792:00000142F4241000]     2404 ms: Scavenge 92.4 (109.1) -> 78.4 (110.6) MB, pooled: 0 MB, 2.64 / 0.00 ms  (average mu = 0.973, current mu = 0.973) allocation failure;
@@ -155,6 +151,10 @@ FATAL ERROR: Zone Allocation failed - process out of memory
 РЕШЕНИЕ
 Ошибка указывает на то, что данных слишком много. Нужно просто очистить кэш 
 npm cache clean --force
+`},{summary:"Если git push не работает (Не изменяет ничего в гитхабе, но ошибок нет)",content:`РЕШЕНИЕ
+Нужно войти в аккаунт.
+Указать почту редактору ГЛОБАЛЬНО чтобы на другие проекты тоже распространялось
+git config --global user.email "toopikoliko2@gmail.com"
 `},{summary:"Фантомные языки",content:`Если каким то образом появились языки при смене раскладки, но в настройках их нет,то их и не получится удалить обычным способом. Как это могло случиться? Лично у меня это получилось когдая устанавливал нужный мне язфк и случайно прокрутил колесиком мыши наведясь к закрытому 'окну' выбора языков.
 Таким образом все языки что я прокрутил поидее выюрались и сами установились
 
@@ -177,4 +177,4 @@ Windows Registry Editor Version 5.00
 "2"="00000419"
 
 [-HKEY_USERS\\.DEFAULT\\Keyboard Layout\\Substitutes]`}]};export{n as default};
-//# sourceMappingURL=errors-Du1eAeyP.js.map
+//# sourceMappingURL=errors-jBtH7tGe.js.map
