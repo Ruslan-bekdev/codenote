@@ -146,7 +146,7 @@ export default {
               'rm -rf node_modules\n' +
               'rm package-lock.json # если есть\n' +
               'npm cache clean --force\n\n' +
-              'Утсанавливаем заново\n' +
+              'Устанавливаем заново\n' +
               'npm install\n' +
               'Принудительно переустановить esbuild\n' +
               'Иногда esbuild нужно пересобрать для правильной архитектуры:\n' +
