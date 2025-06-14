@@ -75,7 +75,8 @@ origin: Это имя удалённого репозитория (по умол
 дело в том, что импорты и экспорты можно использовать только в модульных скриптах`},{summary:"Ошибка при деплое vite проекта",content:`1. Не удалось воспроизвести медиа. Нет декодеров для запрошенных форматов: text/html
 2. HTTP «Content-Type» типа «text/html» не поддерживается. Не удалось загрузить медиаресурс http://localhost:5173/. 
 
-РЕШЕНИЕесли есть файл vite.config.js то указать там base с ссылкой на сайт.
+РЕШЕНИЕ
+если есть файл vite.config.js то указать там base с ссылкой на сайт.
 например так
 import { defineConfig } from 'vite';
 
@@ -90,7 +91,30 @@ export default defineConfig({
         port: 3000,
     },
 });
-`},{summary:"Если git push не работает (Не изменяет ничего в гитхабе, но ошибок нет)",content:`РЕШЕНИЕНужно войти в аккаунт.
+`},{summary:"Ошибка при деплое vite проекта 2",content:`x Build failed in 2.41s
+error during build:
+[vite:esbuild-transpile] The service was stopped
+    at C:\\Users\\Zooppio\\WebstormProjects\\codenote\\node_modules\\esbuild\\lib\\main.js:737:38
+    at responseCallbacks.<computed> (C:\\Users\\Zooppio\\WebstormProjects\\codenote\\node_modules\\esbuild\\lib\\main.js:622:9)
+    at Socket.afterClose (C:\\Users\\Zooppio\\WebstormProjects\\codenote\\node_modules\\esbuild\\lib\\main.js:613:28)
+    at Socket.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+PS C:\\Users\\Zooppio\\WebstormProjects\\codenote>
+
+РЕШЕНИЕ
+Удаляем старые модули и кэши
+rm -rf node_modules
+rm package-lock.json # если есть
+npm cache clean --force
+
+Утсанавливаем заново
+npm install
+Принудительно переустановить esbuild
+Иногда esbuild нужно пересобрать для правильной архитектуры:
+npm rebuild esbuild
+`},{summary:"Если git push не работает (Не изменяет ничего в гитхабе, но ошибок нет)",content:`РЕШЕНИЕ
+Нужно войти в аккаунт.
 Указать почту редактору ГЛОБАЛЬНО чтобы на другие проекты тоже распространялось
 git config --global user.email "toopikoliko2@gmail.com"
 `},{summary:"Ошибка при деплое vite проекта ещё одна",content:`Fatal process out of memory: Zone Allocation failed
@@ -128,12 +152,14 @@ FATAL ERROR: Zone Allocation failed - process out of memory
 22: 00007FF802A77034 BaseThreadInitThunk+20
 23: 00007FF802F62651
 
-РЕШЕНИЕОшибка указывает на то, что данных слишком много. Нужно просто очистить кэш 
+РЕШЕНИЕ
+Ошибка указывает на то, что данных слишком много. Нужно просто очистить кэш 
 npm cache clean --force
 `},{summary:"Фантомные языки",content:`Если каким то образом появились языки при смене раскладки, но в настройках их нет,то их и не получится удалить обычным способом. Как это могло случиться? Лично у меня это получилось когдая устанавливал нужный мне язфк и случайно прокрутил колесиком мыши наведясь к закрытому 'окну' выбора языков.
 Таким образом все языки что я прокрутил поидее выюрались и сами установились
 
-РЕШЕНИЕСоздать текстовый файл и написать туда код. Переименовать файл с .txt на .regи запустить от имени администратора (Хотя у меня получилось и обычным запуском). Вот код:
+РЕШЕНИЕ
+Создать текстовый файл и написать туда код. Переименовать файл с .txt на .regи запустить от имени администратора (Хотя у меня получилось и обычным запуском). Вот код:
 
 Windows Registry Editor Version 5.00
 
@@ -151,4 +177,4 @@ Windows Registry Editor Version 5.00
 "2"="00000419"
 
 [-HKEY_USERS\\.DEFAULT\\Keyboard Layout\\Substitutes]`}]};export{n as default};
-//# sourceMappingURL=errors-Ji9BwYha.js.map
+//# sourceMappingURL=errors-Du1eAeyP.js.map
