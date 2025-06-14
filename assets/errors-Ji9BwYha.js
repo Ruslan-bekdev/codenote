@@ -1,4 +1,16 @@
-const n={title:"Ошибки и их решения",navTitle:"Ошибки",id:"errors",items:[{summary:"Ошибка идентификации аккаунта",content:`Author identity unknown
+const n={title:"Ошибки и решения",navTitle:"Ошибки",id:"errors",items:[{summary:"Ошибка при клонировании, гит не установлен",content:`При первом запуске Вебсторма и попытке клонировать репозиторий может высветитьсяошибка по типу 'Git is not installed' или примерно такое сообщение в маленьком попапе снизу справа.
+
+РЕШЕНИЕ
+Установить Git
+Настройки Вебсторма, Version Control, Git
+В поле Path to Git executable указать путь к Git
+Обычно выглядит как один из вариантов:
+C:\\Program Files\\Git\\bin\\git.exe
+Или
+C:\\Program Files\\Git\\cmd\\git.exe
+
+Чтобы проверить надо нажать рядом кнопку Test и должно выйти Git executed successfully
+`},{summary:"Ошибка идентификации аккаунта",content:`Author identity unknown
 
 *** Please tell me who you are.
 
@@ -16,7 +28,19 @@ fatal: unable to auto-detect email address (got 'toopi@DESKTOP-A29EANT.(none)')
 В Windows Powershell
 git config --global user.name "Ruslan-bekdev"
 и
-git config --global user.email "toopikoliko2@gmail.com"`},{summary:"Ветвь не найдена (В начале проекта при пуше может произойти ошибка)",content:`error: src refspec main does not match any
+git config --global user.email "toopikoliko2@gmail.com"`},{summary:"Ошибка идентификации аккаунта",content:`Имя "npm" не распознано как имя командлета, функции, файла с
+ценария или выполняемой программы. Проверьте правильность написания
+имени, а также наличие и правильность пути, после чего повторите попытку.
+строка:1 знак:1
++ npm i
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (npm:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+РЕШЕНИЕ
+Установить Node.js, перезагрузить все консоли
+Чтобы проверить пишем в PowerShell: $env:Path -split ";"
+Там должна появиться строка C:\\Program Files\\nodejs\\`},{summary:"Ветвь не найдена (В начале проекта при пуше может произойти ошибка)",content:`error: src refspec main does not match any
 error: failed to push some refs to 'https://github.com/Ruslan-bekdev/arcades.git'
 
 РЕШЕНИЕ
@@ -106,5 +130,25 @@ FATAL ERROR: Zone Allocation failed - process out of memory
 
 РЕШЕНИЕОшибка указывает на то, что данных слишком много. Нужно просто очистить кэш 
 npm cache clean --force
-`}]};export{n as default};
-//# sourceMappingURL=errors-BSCjPkqK.js.map
+`},{summary:"Фантомные языки",content:`Если каким то образом появились языки при смене раскладки, но в настройках их нет,то их и не получится удалить обычным способом. Как это могло случиться? Лично у меня это получилось когдая устанавливал нужный мне язфк и случайно прокрутил колесиком мыши наведясь к закрытому 'окну' выбора языков.
+Таким образом все языки что я прокрутил поидее выюрались и сами установились
+
+РЕШЕНИЕСоздать текстовый файл и написать туда код. Переименовать файл с .txt на .regи запустить от имени администратора (Хотя у меня получилось и обычным запуском). Вот код:
+
+Windows Registry Editor Version 5.00
+
+; Очищаем список языков для текущего пользователя
+[HKEY_CURRENT_USER\\Keyboard Layout\\Preload]
+"1"="00000409"
+"2"="00000419"
+
+; Удаляем всё лишнее
+[-HKEY_CURRENT_USER\\Keyboard Layout\\Substitutes]
+
+; Очищаем список языков для экрана блокировки / новых пользователей
+[HKEY_USERS\\.DEFAULT\\Keyboard Layout\\Preload]
+"1"="00000409"
+"2"="00000419"
+
+[-HKEY_USERS\\.DEFAULT\\Keyboard Layout\\Substitutes]`}]};export{n as default};
+//# sourceMappingURL=errors-Ji9BwYha.js.map

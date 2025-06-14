@@ -159,8 +159,18 @@ document.addEventListener("DOMContentLoaded", () => {
 .exampleClassname {
     color: var(--example-var-name);
     background-color: var(--exampleVarName);
-}`},{summary:"Сочетание клавиш",content:`Ctrl + Shift + F или Shift * 2
+}`},{summary:"Фикс яркости ноутбука чтобы не зависил от зарядки",content:`Есть 2 варианта (2й Вариант для AMD):
+Диспетчер задач, Батарея,
+ПКМ по "Батарея с ACPI-совместимым управлением Майкрософт"
+Отключить устройство. (Минус: индикатор зарядки тоже исчезает)
+
+Переходим на сайт по ссылке
+https://www.amd.com/en/support/kb/release-notes/rn-rad-win-15-7-1
+Скачиваем по подходящей ссылке
+Устанавливем, выбираем быструю установку, убираем галочку в "Разрешить веб-содержание"
+ПКМ по рабочему столу, новая кнопка "AMD  catalyst control center"
+Питание, "PowerPlay", убрать галочку с "Включить Vari-Bright"`},{summary:"Сочетание клавиш",content:`Ctrl + Shift + F или Shift * 2
 Поиск по коду проекта
 Ctrl + Shift + Alt + J
 Выделить сразу много текста`}]};export{n as default};
-//# sourceMappingURL=tutorials-CFYyLRfH.js.map
+//# sourceMappingURL=tutorials-BUkq0r2V.js.map
