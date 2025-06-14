@@ -108,7 +108,7 @@ rm -rf node_modules
 rm package-lock.json # если есть
 npm cache clean --force
 
-Утсанавливаем заново
+Устанавливаем заново
 npm install
 Принудительно переустановить esbuild
 Иногда esbuild нужно пересобрать для правильной архитектуры:
@@ -177,4 +177,4 @@ Windows Registry Editor Version 5.00
 "2"="00000419"
 
 [-HKEY_USERS\\.DEFAULT\\Keyboard Layout\\Substitutes]`}]};export{n as default};
-//# sourceMappingURL=errors-jBtH7tGe.js.map
+//# sourceMappingURL=errors-C7yZ5gIh.js.map
