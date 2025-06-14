@@ -110,7 +110,7 @@ export default {
               '1. Не удалось воспроизвести медиа. Нет декодеров для запрошенных форматов: text/html\n' +
               '2. HTTP «Content-Type» типа «text/html» не поддерживается. Не удалось загрузить медиаресурс http://localhost:5173/. \n' +
               '\n' +
-              'РЕШЕНИЕ' +
+              'РЕШЕНИЕ\n' +
               'если есть файл vite.config.js то указать там base с ссылкой на сайт.\n' +
               'например так\n' +
               'import { defineConfig } from \'vite\';\n' +
@@ -128,9 +128,34 @@ export default {
               '});\n',
         },
         {
+          summary: 'Ошибка при деплое vite проекта 2',
+          content: '' +
+              'x Build failed in 2.41s\n' +
+              'error during build:\n' +
+              '[vite:esbuild-transpile] The service was stopped\n' +
+              '    at C:\\Users\\Zooppio\\WebstormProjects\\codenote\\node_modules\\esbuild\\lib\\main.js:737:38\n' +
+              '    at responseCallbacks.<computed> (C:\\Users\\Zooppio\\WebstormProjects\\codenote\\node_modules\\esbuild\\lib\\main.js:622:9)\n' +
+              '    at Socket.afterClose (C:\\Users\\Zooppio\\WebstormProjects\\codenote\\node_modules\\esbuild\\lib\\main.js:613:28)\n' +
+              '    at Socket.emit (node:events:530:35)\n' +
+              '    at endReadableNT (node:internal/streams/readable:1698:12)\n' +
+              '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n' +
+              'PS C:\\Users\\Zooppio\\WebstormProjects\\codenote>\n' +
+              '\n' +
+              'РЕШЕНИЕ\n' +
+              'Удаляем старые модули и кэши\n' +
+              'rm -rf node_modules\n' +
+              'rm package-lock.json # если есть\n' +
+              'npm cache clean --force\n\n' +
+              'Утсанавливаем заново\n' +
+              'npm install\n' +
+              'Принудительно переустановить esbuild\n' +
+              'Иногда esbuild нужно пересобрать для правильной архитектуры:\n' +
+              'npm rebuild esbuild\n',
+        },
+        {
           summary: 'Если git push не работает (Не изменяет ничего в гитхабе, но ошибок нет)',
           content: '' +
-              'РЕШЕНИЕ' +
+              'РЕШЕНИЕ\n' +
               'Нужно войти в аккаунт.\n' +
               'Указать почту редактору ГЛОБАЛЬНО чтобы на другие проекты тоже распространялось\n' +
               'git config --global user.email "toopikoliko2@gmail.com"\n',
@@ -172,7 +197,7 @@ export default {
               '22: 00007FF802A77034 BaseThreadInitThunk+20\n' +
               '23: 00007FF802F62651\n' +
               '\n' +
-              'РЕШЕНИЕ' +
+              'РЕШЕНИЕ\n' +
               'Ошибка указывает на то, что данных слишком много. Нужно просто очистить кэш \n' +
               'npm cache clean --force\n',
         },
@@ -183,7 +208,7 @@ export default {
               'я устанавливал нужный мне язфк и случайно прокрутил колесиком мыши наведясь к закрытому \'окну\' выбора языков.\n' +
               'Таким образом все языки что я прокрутил поидее выюрались и сами установились' +
               '\n\n' +
-              'РЕШЕНИЕ' +
+              'РЕШЕНИЕ\n' +
               'Создать текстовый файл и написать туда код. Переименовать файл с .txt на .reg' +
               'и запустить от имени администратора (Хотя у меня получилось и обычным запуском). Вот код:\n\n' +
               'Windows Registry Editor Version 5.00\n' +
