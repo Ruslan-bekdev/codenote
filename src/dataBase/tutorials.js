@@ -212,6 +212,10 @@ export default {
                 'Питание, "PowerPlay", убрать галочку с "Включить Vari-Bright"'
         },
         {
+            summary: 'Установка Microsoft Store если его нет (например после моего тутора на винду)',
+            content: 'wsreset –i в командную строку'
+        },
+        {
             summary: 'Сочетание клавиш',
             content: 'Ctrl + Shift + F или Shift * 2\n' +
                 'Поиск по коду проекта\n' +
