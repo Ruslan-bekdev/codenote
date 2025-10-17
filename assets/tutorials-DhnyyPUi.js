@@ -169,8 +169,8 @@ https://www.amd.com/en/support/kb/release-notes/rn-rad-win-15-7-1
 Скачиваем по подходящей ссылке
 Устанавливем, выбираем быструю установку, убираем галочку в "Разрешить веб-содержание"
 ПКМ по рабочему столу, новая кнопка "AMD  catalyst control center"
-Питание, "PowerPlay", убрать галочку с "Включить Vari-Bright"`},{summary:"Сочетание клавиш",content:`Ctrl + Shift + F или Shift * 2
+Питание, "PowerPlay", убрать галочку с "Включить Vari-Bright"`},{summary:"Установка Microsoft Store если его нет (например после моего тутора на винду)",content:"wsreset –i в командную строку"},{summary:"Сочетание клавиш",content:`Ctrl + Shift + F или Shift * 2
 Поиск по коду проекта
 Ctrl + Shift + Alt + J
 Выделить сразу много текста`}]};export{n as default};
-//# sourceMappingURL=tutorials-BUkq0r2V.js.map
+//# sourceMappingURL=tutorials-DhnyyPUi.js.map
