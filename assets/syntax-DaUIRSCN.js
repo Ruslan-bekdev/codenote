@@ -145,6 +145,45 @@ table-footer-group - то же что и <tfoot>, нижняя группа ря
 visibility - visible дефолт; hidden невидимый но занимает место; collapse для таблиц: скрывает элемент и убирает его место
 opacity - от 0 до 1
 
+Flex:
+flex-direction - направление оси: row, row-reverse, column, column-revers
+flex-wrap - перенгс строк: nowrap, wrap, wrap-reverse
+flex-flow - сокращенная запись. Например flex-flow: row wrap;
+justify-content - выравнивание по оси: flex-start дефолт; flex-end; center; space-between первый и последний прилипли к стенкам, между ними равномерно; space-around у каждого отступы; space-evenly везде равные отступы
+align-items - выравнивание поперек оси: stretch растягивает по высоте контейнера, дефолт; flex-start; flex-end; center; baseline выравнивание по базовой линии текста
+align-content - выравнивание строк (если их несколько): flex-start; flex-end; center; space-between как у jc; space-around как у jc; stretch строки растягиваются по высоте контейнера
+gap, row-gap, column-gap - отступы между элементами. gap это сокращенная запись row-gap и column-gap
+order - меняет порядок элементов (дается самим элементам, а не контейнеру). 0 дефолт
+flex-grow - определяет, может ли элемент расти, чтобы занять свободное место: 0 не растет, дефолт; 1 растет равномерно с другими; 2 растет в 2 раза быстрее чем 1 (и так далее)
+flex-shrink - отвечает за сжатие, когда не хватает места: 1 сжимается, дефолт; 0 не сжимается
+flex-basis - определяет начальный размер элемента для главной оси перед тем как флекс начнет его менять под оставшееся место(аналог width, но для флексов. "говорит: «считай, что я хочу стартовать с такого размера»". Если grow 0, работает как фиксированная ширина, иначе как минимальная): auto дефолт; 0 прадпочитает начинать с нулевого размера типа;
+flex - короткая запись, совмещающий: grow shrink basis
+align-self - личный align-items для конкретного элемента: auto берет из align-items, дефолт; имеет такие же варианты значений как и у align-items
+
+Grid(сетка):
+grid-template-columns, grid-template-rows - задают колонки и строки сетки: auto подстраивается под контент; fr это доля, например grid-template-columns: 1fr 2fr тогда первый элемент занимает треть, а второй 2 трети; repeat(n, value) повтор, например grid-template-columns: repeat(3, 1fr) делает 3 равных элемента; minmax(min, max) динамическая ширина, например grid-template-columns: repeat(3, minmax(150px, 1fr)) делает 3 элемента с размеров минимум 150 пикселей и максимум 1 фрейм; nакже можно использовать auto-fill и auto-fit например grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) создаст как можно больше колонок шириной минимум 200px, если остались пустые колонки на которых не хватило карточек то они так и останутся; если же в последнем примере вместо fill написать fit и при этом карточек также не хватило и остались пустые колонки то они схлопываются и карточки растяиваются чтобы заполнить пустые места
+grid-area, grid-template-areas - позволяет задать схему расположения по именам. Например задаем элементу grid-area: header; и далее пишем grid-template-areas:
+  "header header"
+  "sidebar main"
+  "footer footer";
+grid-auto-rows, grid-auto-columns - устанавливает размер строк или колонок, которые создаются автоматически (если элементов больше, чем явно заданных ячеек): например если только 2 колонки (grid-template-columns: 1fr 1fr;) а элементов 3, то написав grid-auto-rows: 200px лишний элемент перекинется на новую строку которая будет иметь высоту 200px
+grid-auto-flow - управляет направлением заполнения сетки (аналог fd из Flex): row дефолт; сolumn; row dense / column dense ...с заполнением пустоты, уплотняя элементы
+gap, row-gap, column-gap - то же самое, что и у Flex
+grid-column, grid-row - позволяют разместить элемент в нужных линиях сетки: auto дефолт; например grid-column: 1 / 3; от линии 1 до линии 3; можно еще использовать span вот так grid-column: span 2; означает занять n колонок (в моем примере 2)
+grid-area  - либо дает имя для grid-template-areas либо может делать сразу всё (даётся элементу): например grid-area: 2 / 1 / 4 / 3 (использует grid-row-start, grid-column-start, grid-row-end, grid-column-end) 
+justify-self, align-self, place-self (по оси, поперек оси, обе оси. Если не ошибаюсь, то зависит от grid-auto-flow) - управляют выравниванием элемента внутри лично своей ячейки: start; end; center; stretch  дефолт (растягивает элемент)
+justify-items, align-items, justify-content, align-content, place-items, place-content - выравнивание всей сетки в контейнере: justify-items, align-items, place-items (обе оси) работают на уровне ячейки; justify-content, align-content, place-content (обе оси) работают на уровне всей сетки; 
+grid-template - можно обьеденить шаблон, например: grid-template:
+  "header header" 100px
+  "sidebar main" auto
+  "footer footer" 50px /
+  200px 1fr;
+subgrid (display) -  позволяет вложенному гриду наследовать линии родителя: например у родителя 3 колонки 200px,1fr,300px, тогда у ячейки с субгридом будет такая же сетка с такими же 3 колонками
+order - как и у Flex изменяет порядок элементов в сетке
+
+Position:
+statis дефолт; relative позиционируется относительно себя, absolute становится "призрачным" и позиционируется относительно родителя с любым position кроме статик, иначе body; fixed выпадает из потока и прилипает к экрану; sticky это комбинация relative и sticky прилипая к экрану когда доходит до своей конечной позиции
+z-index - определяет порядок наложение, кро выше кто ниже. Может быть отрицательным
 Остальное:
 `}]};export{n as default};
-//# sourceMappingURL=syntax-JAZdEzHG.js.map
+//# sourceMappingURL=syntax-DaUIRSCN.js.map
