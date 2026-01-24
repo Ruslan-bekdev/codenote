@@ -239,5 +239,9 @@ export default {
                 'Ctrl + Shift + Alt + J\n' +
                 'Выделить сразу много текста'
         },
+        {
+            summary: 'Choco',
+            content: 'Команда для установки: Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(\'https://community.chocolatey.org/install.ps1\'))'
+        },
     ]
 };
