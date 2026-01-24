@@ -185,5 +185,5 @@ for %f in ("СЮДА") do ffmpeg -i "%f" -itsoffset -1 -i "%f" -map 0:v -map 1:a
 Пример: for %f in ("C:\\video\\*.mp4") do ffmpeg -i "%f" -itsoffset -1 -i "%f" -map 0:v -map 1:a -c copy "C:\\fixedVideo\\%~nf_fixed.mp4"`},{summary:"Сочетание клавиш",content:`Ctrl + Shift + F или Shift * 2
 Поиск по коду проекта
 Ctrl + Shift + Alt + J
-Выделить сразу много текста`}]};export{n as default};
-//# sourceMappingURL=tutorials-D8ytappB.js.map
+Выделить сразу много текста`},{summary:"Choco",content:"Команда для установки: Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"}]};export{n as default};
+//# sourceMappingURL=tutorials-CoIn78YI.js.map
