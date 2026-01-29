@@ -1,4 +1,4 @@
-const n={title:"Шаблоны",navTitle:"Шаблоны",id:"templates",items:[{summary:"Шаблон Секции для Коднота",content:`export default {
+const n={title:"Шаблоны",navTitle:"Шаблоны",id:"templates",items:[{summary:"Шаблон Секции для Коднота",content:`{{export default {
     title: "",
     navTitle: "",
     id: "",
@@ -8,7 +8,7 @@ const n={title:"Шаблоны",navTitle:"Шаблоны",id:"templates",items:[
             content: ""
         },
     ]
-}`},{summary:"Zoomable Image (styled components, useState)",content:`import React, { useState } from 'react';
+} }}`},{summary:"Zoomable Image (styled components, useState)",content:`{{import React, { useState } from 'react';
 import styled from "styled-components";
 import {flexCenter, imageDefault} from "../../styles/styles";
 
@@ -74,10 +74,7 @@ const ZoomableImage = ({src, alt, className = ''}) => {
     );
 };
 
-export default ZoomableImage;
-
-Стили от styled components:
-export const flexCenter = css\`
+export default ZoomableImage; }}Стили от styled components:{{export const flexCenter = css\`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,10 +84,10 @@ export const imageDefault = css\`
     height: auto;
     max-width: 100%;
     max-height: 100%;
-\`;
+\`;}}
 
 ВАНИЛА:
-import React, { useState } from 'react';
+{{import React, { useState } from 'react';
 import styles from './ZoomableImage.module.css';
 
 const ZoomableImage = ({ src, alt, className = '' }) => {
@@ -165,8 +162,7 @@ export default ZoomableImage;
     cursor: zoom-out;
     z-index: 20;
     composes: flexCenter;
-}
-`},{summary:"css шаблоны STYLED COMPONENTS или MUI",content:`import {css} from "styled-components";
+} }}`},{summary:"css шаблоны STYLED COMPONENTS или MUI",content:`{{import {css} from "styled-components";
 ИЛИ
 import { css } from '@emotion/react';
 
@@ -376,8 +372,7 @@ export const buttonPrimary = css\`
   &:hover {
     background-color: darken(\${colors.accent}, 10%);
   }
-\`;
-`},{summary:"css шаблоны VANILLA MODULE CSS",content:`/* colors.css */
+\`;}}`},{summary:"css шаблоны VANILLA MODULE CSS",content:`{{/* colors.css */
 :root {
   --main-color: #351C0F;
   --main-rgb: 53, 28, 15;
@@ -584,8 +579,7 @@ export const buttonPrimary = css\`
   .media-desktop {
     /* Add desktop-specific styles here */
   }
-}
-`},{summary:"css шаблоны LESS и SASS",content:`/* colors.less */
+} }}`},{summary:"css шаблоны LESS и SASS",content:`{{/* colors.less */
 @main-color: #351C0F;
 @main-rgb: 53, 28, 15;
 @secondary-color: #E9E9E9;
@@ -678,7 +672,7 @@ export const buttonPrimary = css\`
   .media-tablet {
     /* Tablet-specific styles */
   }
-}`},{summary:"css шаблоны SASS",content:`@import "src/styles/variables"
+} }}`},{summary:"css шаблоны SASS",content:`{{@import "src/styles/variables"
 
 // флекс центрирование
 @mixin justify-center-around
@@ -840,9 +834,8 @@ $dark-mode-background: #121212
 
 // альфа каналы
 $alpha-channel-light: rgba(255, 255, 255, 0.8)
-$alpha-channel-dark: rgba(0, 0, 0, 0.8)
-`},{summary:"components requests",content:`JS
-import {useEffect, useState} from 'react';
+$alpha-channel-dark: rgba(0, 0, 0, 0.8) }}`},{summary:"components requests",content:`JS
+{{import {useEffect, useState} from 'react';
 
 export const useFetch = (url, options = {}) => {
     const [data, setData] = useState([]);
@@ -870,10 +863,8 @@ export const useFetch = (url, options = {}) => {
     }, []);
 
     return {data, error, loading};
-};
-
-TS
-import {useState, useEffect} from "react";
+}; }}TS
+{{import {useState, useEffect} from "react";
 
 export interface ObjectWithUnknownValue {
     [key: string]: unknown;
@@ -909,7 +900,7 @@ export const useFetch = <T>(url: string, options?: ObjectWithUnknownValue): Fetc
     }, [url, options]);
 
     return {data, error, isLoading};
-};`},{summary:"components buttons (JS + SASS)",content:`import React from "react";
+}; }}`},{summary:"components buttons (JS + SASS)",content:`{{import React from "react";
 
 const Button = ({children,func,customClasses = ''}) => {
   return <button
@@ -920,9 +911,8 @@ const Button = ({children,func,customClasses = ''}) => {
   </button>
 };
 
-export default Button;
-
-import React from 'react';
+export default Button; }}
+{{import React from 'react';
 import classes from './Buttons.module.sass';
 
 const IconButton = ({label, icon, isBefore = true, onClick, className = ''}) => {
@@ -957,9 +947,8 @@ const IconButton = ({label, icon, isBefore = true, onClick, className = ''}) => 
     );
 };
 
-export default IconButton;
-
-@import "src/styles/mixins"
+export default IconButton; }}
+{{@import "src/styles/mixins"
 @import "src/styles/variables"
 
 .icon_button
@@ -983,7 +972,7 @@ export default IconButton;
   @media(hover: hover)
     &:hover
       padding: 10px 20px
-      border: 1px solid $secondary-light`},{summary:"components buttons (TS + STYLED COMPONENTS)",content:`import React,{FC} from 'react';
+      border: 1px solid $secondary-light }}`},{summary:"components buttons (TS + STYLED COMPONENTS)",content:`{{import React,{FC} from 'react';
 import styled from "styled-components";
 import {colors, flexCenter} from "../../styles/styles";
 
@@ -1042,7 +1031,7 @@ const IconButton:FC<IconButtonProps> = ({label,icon,alt = 'text',iconLocation,on
     )
 }
 
-export default IconButton;`},{summary:"components navigation (JS + SASS)",content:`import React from 'react';
+export default IconButton; }}`},{summary:"components navigation (JS + SASS)",content:`{{import React from 'react';
 import classes from './Navigation.module.sass';
 import {useLocation} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
@@ -1071,9 +1060,7 @@ const Navigation = ({config, text}) => {
     );
 };
 
-export default Navigation;
-
-@import "src/styles/mixins"
+export default Navigation; }}{{ @import "src/styles/mixins"
 @import "src/styles/variables"
 
 @keyframes enlarge
@@ -1106,7 +1093,7 @@ export default Navigation;
 
 .active
   pointer-events: none
-  opacity: 0.3`},{summary:"components (TS + SASS)",content:`import React from 'react';
+  opacity: 0.3 }}`},{summary:"components (TS + SASS)",content:`{{import React from 'react';
 import classes from './Navigation.module.sass';
 import { useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
@@ -1140,9 +1127,8 @@ const Navigation: React.FC<NavigationProps> = ({ config, text }) => {
   );
 };
 
-export default Navigation;
-`},{summary:"components images (JS + SASS)",content:`SCROLABLE IMAGE
-import React from 'react';
+export default Navigation; }}`},{summary:"components images (JS + SASS)",content:`SCROLABLE IMAGE
+{{import React from 'react';
 import classes from './ScrollableImage.module.sass';
 
 const ScrollableImage = ({src = '#', alt = 'image', className = ''}) => {
@@ -1159,9 +1145,7 @@ const ScrollableImage = ({src = '#', alt = 'image', className = ''}) => {
     );
 };
 
-export default ScrollableImage;
-
-@import "src/styles/mixins"
+export default ScrollableImage; }}{{@import "src/styles/mixins"
 @import "src/styles/variables"
 
 .image_block
@@ -1169,10 +1153,7 @@ export default ScrollableImage;
   height: 100%
   overflow: auto
   img
-    width: 100%
-
-TOOLTIPED IMAGE
-import React from 'react';
+    width: 100%}}TOOLTIPED IMAGE{{import React from 'react';
 import classes from './TooltopedImage.module.sass';
 import {Tooltip} from "@mui/material";
 
@@ -1190,16 +1171,13 @@ const TooltipedImage  = ({title,placement = 'top',image,alt}) => {
                 src={image}
                 alt={alt || title || image}
                 className={classes.image}
-                style={isImageSkills && {width: \`\${skillsCount * 40}px\`}}
+                style={isImageSkills && {width: \`\${skillsCount * 40}px\`} }
             />
         </Tooltip>
     );
 };
 
-export default TooltipedImage;
-
-
-.image
+export default TooltipedImage;}}{{.image
   height: 40px
   transition: transform 0.2s ease-in-out
   @media(hover: hover)
@@ -1207,11 +1185,7 @@ export default TooltipedImage;
       transform: scale(1.1)
   @media(hover: none)
     &:active
-      transform: scale(1.1)
-
-
-ZOOMABLE IMAGE
-import React, { useState } from 'react';
+      transform: scale(1.1) }}ZOOMABLE IMAGE{{import React, { useState } from 'react';
 import classes from './ZoomableImage.module.sass';
 
 const ZoomableImage = ({src, alt, className = ''}) => {
@@ -1250,9 +1224,7 @@ const ZoomableImage = ({src, alt, className = ''}) => {
     );
 };
 
-export default ZoomableImage;
-
-@import "src/styles/mixins"
+export default ZoomableImage;}}{{@import "src/styles/mixins"
 @import "src/styles/variables"
 
 .overlay
@@ -1289,8 +1261,8 @@ export default ZoomableImage;
     z-index: 9999
     img
       @include imageDefault
-      object-fit: contain`},{summary:"components images (JS + SASS)",content:`SCROLABLE IMAGE
-import React from 'react';
+      object-fit: contain }}`},{summary:"components images (JS + SASS)",content:`SCROLABLE IMAGE
+{{import React from 'react';
 import classes from './ScrollableImage.module.sass';
 
 interface ScrollableImageProps {
@@ -1311,9 +1283,7 @@ const ScrollableImage: React.FC<ScrollableImageProps> = ({
   );
 };
 
-export default ScrollableImage;
-
-@import "src/styles/mixins"
+export default ScrollableImage; }}{{@import "src/styles/mixins"
 @import "src/styles/variables"
 
 .image_block
@@ -1321,10 +1291,8 @@ export default ScrollableImage;
   height: 100%
   overflow: auto
   img
-    width: 100%
-
-TOOLTIPED IMAGE
-import React from 'react';
+    width: 100% }}TOOLTIPED IMAGE
+{{import React from 'react';
 import classes from './TooltopedImage.module.sass';
 import {Tooltip} from "@mui/material";
 
@@ -1354,16 +1322,15 @@ const TooltipedImage: React.FC<TooltipedImageProps> = ({
         src={image}
         alt={alt || title || image}
         className={classes.image}
-        style={isImageSkills && { width: \`\${skillsCount * 40}px\` }}
+        style={isImageSkills && { width: \`\${skillsCount * 40}px\`} }
       />
     </Tooltip>
   );
 };
 
-export default TooltipedImage;
+export default TooltipedImage;}}
 
-
-.image
+{{.image
   height: 40px
   transition: transform 0.2s ease-in-out
   @media(hover: hover)
@@ -1371,11 +1338,8 @@ export default TooltipedImage;
       transform: scale(1.1)
   @media(hover: none)
     &:active
-      transform: scale(1.1)
-
-
-ZOOMABLE IMAGE
-import React, { useState } from 'react';
+      transform: scale(1.1)}}ZOOMABLE IMAGE
+{{import React, { useState } from 'react';
 import classes from './ZoomableImage.module.sass';
 
 interface ZoomableImageProps {
@@ -1413,9 +1377,7 @@ const ZoomableImage: React.FC<ZoomableImageProps> = ({
   );
 };
 
-export default ZoomableImage;
-
-@import "src/styles/mixins"
+export default ZoomableImage; }}{{@import "src/styles/mixins"
 @import "src/styles/variables"
 
 .overlay
@@ -1452,7 +1414,7 @@ export default ZoomableImage;
     z-index: 9999
     img
       @include imageDefault
-      object-fit: contain`},{summary:"components loading spinner (JS + STYLED COMPONENTS)",content:`import React from "react";
+      object-fit: contain }}`},{summary:"components loading spinner (JS + STYLED COMPONENTS)",content:`{{import React from "react";
 import { CircularProgress } from "@mui/material";
 import { styled } from "styled-components";
 
@@ -1471,8 +1433,7 @@ const LoadingSpinner = ({ value = 'Загрузка...' }) => {
   );
 };
 
-export default LoadingSpinner;
-`},{summary:"components loading spinner (TS + STYLED COMPONENTS)",content:`import React,{FC} from "react";
+export default LoadingSpinner; }}`},{summary:"components loading spinner (TS + STYLED COMPONENTS)",content:`{{import React,{FC} from "react";
 import {CircularProgress} from "@mui/material";
 import {styled} from "styled-components";
 
@@ -1494,7 +1455,7 @@ const LoadingSpinner: FC<LoadingSpinnerProps> = ({value = 'Загрузка...'}
   )
 };
 
-export default LoadingSpinner;`},{summary:"components modal (JS + COMPONENTS + REACT ROUTER DOM)",content:`import React, { Fragment } from 'react';
+export default LoadingSpinner; }}`},{summary:"components modal (JS + COMPONENTS + REACT ROUTER DOM)",content:`{{import React, { Fragment } from 'react';
 import styled from "styled-components";
 import { useLocation, useNavigate } from "react-router-dom";
 import { colors, flexCenter, flexCenter_column, justifyCenter_between, center_absolute } from "../../styles/styles";
@@ -1574,8 +1535,7 @@ const Modal = ({ title, content }) => {
     );
 };
 
-export default Modal;
-`},{summary:"components modal (TS + STYLED COMPONENTS + REACT ROUTE DOM)",content:`import React,{FC,Fragment,ReactElement} from 'react';
+export default Modal; }}`},{summary:"components modal (TS + STYLED COMPONENTS + REACT ROUTE DOM)",content:`{{import React,{FC,Fragment,ReactElement} from 'react';
 import styled from "styled-components";
 import {useLocation,useNavigate} from "react-router-dom";
 import {colors,flexCenter,flexCenter_column,justifyCenter_between,center_absolute} from "../../styles/styles";
@@ -1660,5 +1620,5 @@ const Modal:FC<ModalProps> = ({title,content}) => {
         )
 };
 
-export default Modal;`}]};export{n as default};
-//# sourceMappingURL=templates-CCWEh9b2.js.map
+export default Modal; }}`}]};export{n as default};
+//# sourceMappingURL=templates-PCkkXTMF.js.map
