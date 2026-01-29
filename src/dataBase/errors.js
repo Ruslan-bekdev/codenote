@@ -7,35 +7,28 @@ export default {
             summary: "Ошибка при клонировании, гит не установлен",
             content: "" +
                 "При первом запуске Вебсторма и попытке клонировать репозиторий может высветиться" +
-                "ошибка по типу \'Git is not installed\' или примерно такое сообщение в маленьком попапе снизу справа."+
-                "\n\n" +
-                "РЕШЕНИЕ\n" +
+                "ошибка по типу \'Git is not installed\' или примерно такое сообщение в маленьком попапе снизу справа.\n"+
+                "~~РЕШЕНИЕ\n" +
                 "Установить Git\n" +
                 "Настройки Вебсторма, Version Control, Git\n" +
                 "В поле Path to Git executable указать путь к Git\n" +
-                "Обычно выглядит как один из вариантов:\n" +
+                "Обычно выглядит как один из вариантов: \n" +
                 "C:\\Program Files\\Git\\bin\\git.exe\n" +
                 "Или\n" +
-                "C:\\Program Files\\Git\\cmd\\git.exe\n\n" +
+                "C:\\Program Files\\Git\\cmd\\git.exe\n" +
                 "Чтобы проверить надо нажать рядом кнопку Test и должно выйти Git executed successfully\n"
         },
         {
             summary: "Ошибка идентификации аккаунта",
             content: "" +
-                "Author identity unknown\n" +
-                "\n" +
+                "!!!!Author identity unknown\n" +
                 "*** Please tell me who you are.\n" +
-                "\n" +
                 "Run\n" +
-                "\n" +
                 "  git config --global user.email \"you@example.com\"\n" +
                 "  git config --global user.name \"Your Name\"\n" +
-                "\n" +
                 "to set your account's default identity.\n" +
                 "Omit --global to set the identity only in this repository.\n" +
-                "\n" +
-                "fatal: unable to auto-detect email address (got 'toopi@DESKTOP-A29EANT.(none)')" +
-                "\n\n" +
+                "fatal: unable to auto-detect email address (got 'toopi@DESKTOP-A29EANT.(none)')!!!!" +
                 "РЕШЕНИЕ\n" +
                 "В Windows Powershell\n" +
                 "git config --global user.name \"Ruslan-bekdev\"\n" +
@@ -45,7 +38,7 @@ export default {
         {
             summary: "Ошибка идентификации аккаунта",
             content: "" +
-                "Имя \"npm\" не распознано как имя командлета, функции, файла с\n" +
+                "!!!!Имя \"npm\" не распознано как имя командлета, функции, файла с\n" +
                 "ценария или выполняемой программы. Проверьте правильность написания\n" +
                 "имени, а также наличие и правильность пути, после чего повторите попытку.\n" +
                 "строка:1 знак:1\n" +
@@ -53,7 +46,7 @@ export default {
                 "+ ~~~\n" +
                 "    + CategoryInfo          : ObjectNotFound: (npm:String) [], CommandNotFoundException\n" +
                 "    + FullyQualifiedErrorId : CommandNotFoundException" +
-                "\n\n" +
+                "\n\n!!!!" +
                 "РЕШЕНИЕ\n" +
                 "Установить Node.js, перезагрузить все консоли\n" +
                 "Чтобы проверить пишем в PowerShell: $env:Path -split \";\"\n" +
@@ -61,31 +54,29 @@ export default {
         },
         {
             summary: "Ветвь не найдена (В начале проекта при пуше может произойти ошибка)",
-            content: "error: src refspec main does not match any\n" +
-                "error: failed to push some refs to 'https://github.com/Ruslan-bekdev/arcades.git'\n" +
-                "\nРЕШЕНИЕ\n" +
-                "это значит что нет такой ветви как мейн. \n" +
-                "git branch проверка текущей ветви\n" +
-                "git push origin master если текущая ветвь master\n" +
-                "если нужна именно ветвь main то \n" +
-                "git checkout -b main\n" +
-                "ветвь создана. Теперь пушим\n" +
-                "git push -u origin main"
+            content: "!!!!error: src refspec main does not match any\n" +
+                "error: failed to push some refs to 'https://github.com/Ruslan-bekdev/arcades.git'!!!!\n" +
+                "РЕШЕНИЕ\n" +
+                "Это значит что нет такой ветви как мейн. \n" +
+                "Проверка текущей ветви {{git branch}}" +
+                "Если текущая ветвь master {{git push origin master}}" +
+                "Если нужна именно ветвь main то" +
+                "{{git checkout -b main}}" +
+                "Ветвь создана. Теперь пушим" +
+                "{{git push -u origin main}}"
         },
         {
             summary: "Связь локальных и удаленных ветвей (\n" +
                 "при попытке пуша. Скорее всего после предыдущей ошибки 'Ветвь не найдена')",
-            content: "fatal: The current branch main has no upstream branch.\n" +
+            content: "!!!!fatal: The current branch main has no upstream branch.\n" +
                 "To push the current branch and set the remote as upstream, use     \n" +
-                "\n" +
                 "    git push --set-upstream origin main\n" +
-                "\n" +
                 "To have this happen automatically for branches without a tracking  \n" +
-                "upstream, see 'push.autoSetupRemote' in 'git help config'.\n\n" +
+                "upstream, see 'push.autoSetupRemote' in 'git help config'.!!!!" +
                 "РЕШЕНИЕ\n" +
-                "локальная ветка main не связана с удалённой веткой на GitHub.\n" +
-                "Нужно установить upstream (верхний уровень)\n" +
-                "git push --set-upstream origin main\n" +
+                "Локальная ветка main не связана с удалённой веткой на GitHub.\n" +
+                "Нужно установить upstream (верхний уровень)" +
+                "{{git push --set-upstream origin main}}" +
                 "Пояснение:\n" +
                 "--set-upstream: Эта опция связывает локальную ветку с удалённой веткой на origin (удалённом репозитории).\n" +
                 "origin: Это имя удалённого репозитория (по умолчанию при создании репозитория в Git)."
@@ -98,22 +89,21 @@ export default {
         {
             summary: 'Ошибка импорта, экспорта в скрипт файле (при подключении скрипта к html через тег script\n' +
                 'в консоли выходит ошибка)',
-            content: 'import declarations may only appear at top level of a module\n\n' +
+            content: '!!!!import declarations may only appear at top level of a module!!!!' +
                 'РЕШЕНИЕ\n' +
-                'добавить type="module" для срикпт тега.\n' +
-                'пояснение:\n' +
-                'дело в том, что импорты и экспорты можно использовать только в модульных скриптах',
+                'Добавить type="module" для срикпт тега.\n' +
+                'Пояснение:\n' +
+                'Дело в том, что импорты и экспорты можно использовать только в модульных скриптах',
         },
         {
           summary: 'Ошибка при деплое vite проекта',
           content: '' +
-              '1. Не удалось воспроизвести медиа. Нет декодеров для запрошенных форматов: text/html\n' +
-              '2. HTTP «Content-Type» типа «text/html» не поддерживается. Не удалось загрузить медиаресурс http://localhost:5173/. \n' +
-              '\n' +
+              '!!!!1. Не удалось воспроизвести медиа. Нет декодеров для запрошенных форматов: text/html\n' +
+              '2. HTTP «Content-Type» типа «text/html» не поддерживается. Не удалось загрузить медиаресурс http://localhost:5173/. !!!!' +
               'РЕШЕНИЕ\n' +
-              'если есть файл vite.config.js то указать там base с ссылкой на сайт.\n' +
-              'например так\n' +
-              'import { defineConfig } from \'vite\';\n' +
+              'Если есть файл vite.config.js то указать там base с ссылкой на сайт.\n' +
+              'Например так' +
+              '[[import { defineConfig } from \'vite\';\n' +
               '\n' +
               'export default defineConfig({\n' +
               '    root: \'./\',\n' +
@@ -125,12 +115,12 @@ export default {
               '    server: {\n' +
               '        port: 3000,\n' +
               '    },\n' +
-              '});\n',
+              '});]]',
         },
         {
           summary: 'Ошибка при деплое vite проекта 2',
           content: '' +
-              'x Build failed in 2.41s\n' +
+              '!!!!x Build failed in 2.41s\n' +
               'error during build:\n' +
               '[vite:esbuild-transpile] The service was stopped\n' +
               '    at C:\\Users\\Zooppio\\WebstormProjects\\codenote\\node_modules\\esbuild\\lib\\main.js:737:38\n' +
@@ -139,22 +129,21 @@ export default {
               '    at Socket.emit (node:events:530:35)\n' +
               '    at endReadableNT (node:internal/streams/readable:1698:12)\n' +
               '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n' +
-              'PS C:\\Users\\Zooppio\\WebstormProjects\\codenote>\n' +
-              '\n' +
+              'PS C:\\Users\\Zooppio\\WebstormProjects\\codenote>!!!!' +
               'РЕШЕНИЕ\n' +
-              'Удаляем старые модули и кэши\n' +
-              'rm -rf node_modules\n' +
-              'rm package-lock.json # если есть\n' +
-              'npm cache clean --force\n\n' +
-              'Устанавливаем заново\n' +
-              'npm install\n' +
+              'Удаляем старые модули и кэши' +
+              '{{rm -rf node_modules}} (если есть)' +
+              '{{rm package-lock.json #}}' +
+              '{{npm cache clean --force}}' +
+              'Устанавливаем заново' +
+              '{{npm install}}' +
               'Принудительно переустановить esbuild\n' +
-              'Иногда esbuild нужно пересобрать для правильной архитектуры:\n' +
-              'npm rebuild esbuild\n',
+              'Иногда esbuild нужно пересобрать для правильной архитектуры' +
+              '{{npm rebuild esbuild}}',
         },
         {
           summary: 'Ошибка при деплое vite проекта 3',
-          content: 'Fatal process out of memory: Zone Allocation failed\n' +
+          content: '!!!!Fatal process out of memory: Zone Allocation failed\n' +
               '<--- Last few GCs --->\n' +
               '[3792:00000142F4241000]     2340 ms: Scavenge 91.2 (107.8) -> 77.5 (108.8) MB, pooled: 0 MB, 3.45 / 0.00 ms  (average mu = 0.973, current mu = 0.973) allocation failure;\n' +
               '[3792:00000142F4241000]     2404 ms: Scavenge 92.4 (109.1) -> 78.4 (110.6) MB, pooled: 0 MB, 2.64 / 0.00 ms  (average mu = 0.973, current mu = 0.973) allocation failure;\n' +
@@ -187,11 +176,10 @@ export default {
               '20: 00007FF7A311AA43\n' +
               '21: 00007FF7A4A95A9E\n' +
               '22: 00007FF802A77034 BaseThreadInitThunk+20\n' +
-              '23: 00007FF802F62651\n' +
-              '\n' +
+              '23: 00007FF802F62651!!!!' +
               'РЕШЕНИЕ\n' +
               'Ошибка указывает на то, что данных слишком много. Нужно просто очистить кэш \n' +
-              'npm cache clean --force\n',
+              '{{npm cache clean --force}}',
         },
         {
             summary: 'Если git push не работает (Не изменяет ничего в гитхабе, но ошибок нет)',
@@ -199,7 +187,7 @@ export default {
                 'РЕШЕНИЕ\n' +
                 'Нужно войти в аккаунт.\n' +
                 'Указать почту редактору ГЛОБАЛЬНО чтобы на другие проекты тоже распространялось\n' +
-                'git config --global user.email "toopikoliko2@gmail.com"\n',
+                '{{git config --global user.email "toopikoliko2@gmail.com"}}\n',
         },
         {
           summary: 'Фантомные языки',
@@ -208,10 +196,10 @@ export default {
               'я устанавливал нужный мне язфк и случайно прокрутил колесиком мыши наведясь к закрытому \'окну\' выбора языков.\n' +
               'Таким образом все языки что я прокрутил поидее выюрались и сами установились' +
               '\n\n' +
-              'РЕШЕНИЕ\n' +
+              '~~РЕШЕНИЕ\n' +
               'Создать текстовый файл и написать туда код. Переименовать файл с .txt на .reg' +
-              'и запустить от имени администратора (Хотя у меня получилось и обычным запуском). Вот код:\n\n' +
-              'Windows Registry Editor Version 5.00\n' +
+              'и запустить от имени администратора (Хотя у меня получилось и обычным запуском). Вот код: ' +
+              '{{Windows Registry Editor Version 5.00\n' +
               '\n' +
               '; Очищаем список языков для текущего пользователя\n' +
               '[HKEY_CURRENT_USER\\Keyboard Layout\\Preload]\n' +
@@ -226,7 +214,7 @@ export default {
               '"1"="00000409"\n' +
               '"2"="00000419"\n' +
               '\n' +
-              '[-HKEY_USERS\\.DEFAULT\\Keyboard Layout\\Substitutes]',
+              '[-HKEY_USERS\\.DEFAULT\\Keyboard Layout\\Substitutes] }}',
         },
     ]
 };

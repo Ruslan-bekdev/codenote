@@ -8,13 +8,12 @@ export default {
             content: "создать репозиторий в гитхабе\n" +
                 "выбираем будет ли репозиторий приватным или публичным\n" +
                 "\n" +
-                "сначало создай основу проекта, например vite или react\n" +
-                "а потом уже инициализируй через git init\n" +
-                "подключить проект в репозиторий через команду\n" +
-                "git remote add origin https://github.com/Ruslan-bekdev/codenote (ссылку свою)\n" +
-                "\n" +
-                "git branch -M main чтобы переименовать текущую ветвь в мейн\n" +
-                "git push -u origin main при первом пуше"
+                "Сначала создай основу проекта, например vite или react\n" +
+                "А потом уже инициализируй через {{git init}}\n" +
+                "Подключить проект в репозиторий через команду\n" +
+                "{{git remote add origin https://github.com/Ruslan-bekdev/codenote}} (ссылку свою)\n" +
+                "Чтобы переименовать текущую ветвь в мейн: {{git branch -M main}}" +
+                "При первом пуше: {{git push -u origin main}}"
         },
         {
             summary: "Создание React проекта и первичная настройка",
@@ -41,20 +40,19 @@ export default {
         },
         {
             summary: "Создание Vite проекта и первичная настройка",
-            content: "VITE\n" +
-                "npm create vite@latest .\n" +
-                "команда запуска: npm run dev\n" +
-                "\n" +
-                "добавляем плагин\n" +
+            content: "VITE" +
+                "{{npm create vite@latest .}}" +
+                "Команда запуска: {{npm run dev}}" +
+                "Далее добавляем плагин\n" +
                 "Создай vite.config.js и добавь туда\n" +
-                "import Inspect from 'vite-plugin-inspect';\n" +
+                "{{import Inspect from 'vite-plugin-inspect';\n" +
                 "\n" +
                 "export default {\n" +
                 "    plugins: [\n" +
                 "        Inspect(),\n" +
                 "    ]\n" +
-                "}\n" +
-                "Чтобы включить плагин надо перезапустить хостинг\n" +
+                "} }}" +
+                "чтобы включить плагин надо перезапустить хостинг\n" +
                 "\n" +
                 "Удаляем лишнее\n" +
                 "В папке public\n" +
@@ -75,22 +73,22 @@ export default {
                 '\n' +
                 '2.Настройка проекта\n' +
                 'Пекейдж Джейсон:\n' +
-                'Добавить homepage и указать ему скопированную ссылку\n' +
-                'npm i gh-pages\n' +
+                'Добавить homepage и указать ему скопированную ссылку' +
+                '{{npm i gh-pages}}' +
                 'В scripts прописать следующие ключи\n' +
-                '"deploy": "gh-pages -d build",\n' +
-                '"predeploy": "npm run build"\n' +
+                '{{"deploy": "gh-pages -d build",\n' +
+                '"predeploy": "npm run build"}}' +
                 'Закомитить все и запушить\n' +
                 '\n' +
-                '3.Деплой\n' +
-                'npm run deploy\n' +
+                '3.Деплой' +
+                '{{npm run deploy}}' +
                 'Настройка-pages:\n' +
                 'Поменять ветвь на gh-pages\n' +
                 'Подождать\n' +
                 '\n' +
                 'Замечания!\n' +
                 'Если в проекте есть Браузер Роутер, то:\n' +
-                'в элемент BrowserRouter из index.js надо добавить селектор basename={process.env.PUBLIC_URL',
+                'в элемент BrowserRouter из index.js надо добавить селектор {{basename={process.env.PUBLIC_URL} }}',
         },
         {
             summary: 'Деплой на Гитхаб пейджес vite vanilla js проекта',
@@ -99,15 +97,15 @@ export default {
                 'Выбрать главную ветвь и сейв\n' +
                 'Скопировать ссылку которая появится\n' +
                 '\n' +
-                '2.Настройка проекта\n' +
-                'npm i gh-pages\n' +
+                '2.Настройка проекта' +
+                '{{npm i gh-pages}}' +
                 'В scripts прописать следующие ключи после ключа "dev"\n' +
-                '"deploy": "gh-pages -d dist",\n' +
-                '"predeploy": "npm run build"\n' +
+                '{{"deploy": "gh-pages -d dist",\n' +
+                '"predeploy": "npm run build"}}' +
                 'указать в файле vite.config.js ключ base с ссылкой в значении (если такого файла нет - создать)\n' +
                 'Например так' +
-                'base: \'https://ruslan-bekdev.github.io/codenote/\',\n' +
-                'В итоге должно быть так import { defineConfig } from \'vite\';\n' +
+                '{{base: \'https://ruslan-bekdev.github.io/codenote/\',}}' +
+                'В итоге должно быть так {{import { defineConfig } from \'vite\';\n' +
                 '\n' +
                 'export default defineConfig({\n' +
                 '    root: \'./\',\n' +
@@ -119,11 +117,11 @@ export default {
                 '    server: {\n' +
                 '        port: 3000,\n' +
                 '    },\n' +
-                '});\n' +
+                '}); }}' +
                 'Закомитить все и запушить\n' +
                 '\n' +
                 '3.Деплой\n' +
-                'npm run deploy\n' +
+                '{{npm run deploy}}\n' +
                 'Настройка-pages:\n' +
                 'Поменять ветвь на gh-pages\n' +
                 'Подождать'
@@ -131,7 +129,7 @@ export default {
         {
           summary: 'Установка JetBrains программ и обход лицензии',
           content: 'Установить с нуля свежий редактор\n' +
-              'Перейти на сайт https://3.jetbra.in\n' +
+              'Перейти на сайт {{https://3.jetbra.in}}\n' +
               'Перейти на любой онлайн сервер\n' +
               'Установить архив, показавшийся сверху сайта jetbra.zip\n' +
               'Распаковать, scripts > install-all-users.vbs\n' +
@@ -143,7 +141,7 @@ export default {
         {
           summary: 'Реализация хашированного пароля на сайт (средняя защита. Опытные кодеры легко взломают)',
           content: 'Создаем js файл и пишем туда\n' +
-              'import bcrypt from "bcryptjs";\n' +
+              '{{import bcrypt from "bcryptjs";\n' +
               '\n' +
               'const storedHash = "СЮДА СВОЙ ХЕШ";\n' +
               '\n' +
@@ -163,31 +161,29 @@ export default {
               '        alert("Неверный пароль! Доступ запрещен.");\n' +
               '        document.body.innerHTML = "<h1>Доступ запрещен</h1>";\n' +
               '    }\n' +
-              '}\n' +
-              '\n' +
+              '} }}' +
               'Откуда взять Хеш?\n' +
-              'выполняем npm i bcryptjs\n' +
+              'выполняем {{npm i bcryptjs}}' +
               'выполняем команду node и втсавляем туда это:\n' +
-              'export default authenticateUser;' +
+              '{{export default authenticateUser;\n' +
               'npm install bcryptjs\n' +
               'const bcrypt = require("bcryptjs");\n' +
               'const password = "ПАРОЛЬ СЮДА СВОЙ";\n' +
               'bcrypt.hash(password, 10, function (err, hash) {\n' +
               '  console.log("Хэш пароля:", hash);\n' +
-              '});\n' +
+              '}); }}' +
               'Он даст хеш, который и нужно вставить в созданный js файл\n' +
               'Затем создаем другой js файл и вставляем туда\n' +
-              'import authenticateUser from "./ТОТ САМЫЙ ПЕРВЫЙ JS ФАЙЛ.js";\n' +
+              '{{import authenticateUser from "./ТОТ САМЫЙ ПЕРВЫЙ JS ФАЙЛ.js";\n' +
               '\n' +
               'document.addEventListener("DOMContentLoaded", () => {\n' +
               '    authenticateUser();\n' +
-              '});\n' +
-              '\n' +
+              '}); }}' +
               'Если нужно изменить пароль, то просто меняем его и вставляем в node, меняя хеш'
         },
         {
             summary: 'Переменные в ванильном CSS',
-            content: ':root {\n' +
+            content: '{{:root {\n' +
                 '    --example-var-name: "example value";\n' +
                 '    --exampleVarName: "example value"\n' +
                 '}\n' +
@@ -195,7 +191,7 @@ export default {
                 '.exampleClassname {\n' +
                 '    color: var(--example-var-name);\n' +
                 '    background-color: var(--exampleVarName);\n' +
-                '}'
+                '} }}'
         },
         {
             summary: 'Фикс яркости ноутбука чтобы не зависил от зарядки',
@@ -204,8 +200,8 @@ export default {
                 'ПКМ по "Батарея с ACPI-совместимым управлением Майкрософт"\n' +
                 'Отключить устройство. (Минус: индикатор зарядки тоже исчезает)' +
                 '\n\n' +
-                'Переходим на сайт по ссылке\n' +
-                'https://www.amd.com/en/support/kb/release-notes/rn-rad-win-15-7-1\n' +
+                'Переходим на сайт по ссылке' +
+                '{{https://www.amd.com/en/support/kb/release-notes/rn-rad-win-15-7-1}}' +
                 'Скачиваем по подходящей ссылке\n' +
                 'Устанавливем, выбираем быструю установку, убираем галочку в "Разрешить веб-содержание"\n' +
                 'ПКМ по рабочему столу, новая кнопка "AMD  catalyst control center"\n' +
@@ -213,11 +209,11 @@ export default {
         },
         {
             summary: 'Установка Microsoft Store если его нет (например после моего тутора на винду)',
-            content: 'wsreset –i в командную строку'
+            content: '{{wsreset –i}} в командную строку'
         },
         {
             summary: 'Как починить рассинхрон аудио и видео через ffmpeg',
-            content: 'Переходим по ссылке https://ffmpeg.org/download.html#build-windows\n' +
+            content: 'Переходим по ссылке {{https://ffmpeg.org/download.html#build-windows}}' +
                 'В моём случае переходим к Виндовс и выбираем один из двух Билдов. Лично я выбрал билд от gyan.dev\n' +
                 'В новой странице нас интересуют release builds, выбираем неполную версию ffmpeg-release-essentials.zip\n' +
                 'Распаковфваем и переносим папку в удобное дял нас место, например в диск C:\\FFmpeg (можно переименовать для удобства)\n' +
@@ -226,11 +222,11 @@ export default {
                 'Теперь в командной строке пишем команду ffmpeg -version, если появился длинный текст с информацией о программе, значит готово' +
                 '\n\n' +
                 'Определимся с командами. Если Рот отркывается, а потом только звук то используем отрицательное значение -itsoffset -1, иначе положительное -itsoffset 1. -c copy гарантирует отстутствие перекадирования\n' +
-                'Команда выглядит так "ffmpeg -i "" -itsoffset -1 -i "" -map 0:v -map 1:a -c copy ""\n' +
-                'Также можно исправлять сразу несколько видео в одной ппаке, то подходит следующий код\n' +
-                'for %f in ("СЮДА") do ffmpeg -i "%f" -itsoffset -1 -i "%f" -map 0:v -map 1:a -c copy "ТУДА"\n' +
+                'Команда выглядит так "{{ffmpeg -i "" -itsoffset -1 -i "" -map 0:v -map 1:a -c copy ""}}' +
+                'Также можно исправлять сразу несколько видео в одной ппаке, то подходит следующий код' +
+                '{{for %f in ("СЮДА") do ffmpeg -i "%f" -itsoffset -1 -i "%f" -map 0:v -map 1:a -c copy "ТУДА"}}' +
                 'В этом коде СЮДА надо написать путь к папке с видео как обычно, но вместо названия написать *, а ТУДА написать путь к файлу сохранения но вместо название написать %~nf, таким образом он сохранится под старым названием\n' +
-                'Пример: for %f in ("C:\\video\\*.mp4") do ffmpeg -i "%f" -itsoffset -1 -i "%f" -map 0:v -map 1:a -c copy "C:\\fixedVideo\\%~nf_fixed.mp4"'
+                'Пример: {{for %f in ("C:\\video\\*.mp4") do ffmpeg -i "%f" -itsoffset -1 -i "%f" -map 0:v -map 1:a -c copy "C:\\fixedVideo\\%~nf_fixed.mp4"}}'
         },
         {
             summary: 'Сочетание клавиш',
@@ -241,7 +237,7 @@ export default {
         },
         {
             summary: 'Choco',
-            content: 'Команда для установки: Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(\'https://community.chocolatey.org/install.ps1\'))'
+            content: 'Команда для установки: {{Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(\'https://community.chocolatey.org/install.ps1\'))}}'
         },
     ]
 };

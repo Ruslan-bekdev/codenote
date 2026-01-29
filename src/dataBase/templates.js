@@ -5,7 +5,7 @@ export default {
     items: [
         {
             summary: "Шаблон Секции для Коднота",
-            content: "export default {\n" +
+            content: "{{export default {\n" +
                 "    title: \"\",\n" +
                 "    navTitle: \"\",\n" +
                 "    id: \"\",\n" +
@@ -15,11 +15,11 @@ export default {
                 "            content: \"\"\n" +
                 "        },\n" +
                 "    ]\n" +
-                "}"
+                "} }}"
         },
         {
           summary: 'Zoomable Image (styled components, useState)',
-          content: 'import React, { useState } from \'react\';\n' +
+          content: '{{import React, { useState } from \'react\';\n' +
               'import styled from "styled-components";\n' +
               'import {flexCenter, imageDefault} from "../../styles/styles";\n' +
               '\n' +
@@ -85,10 +85,9 @@ export default {
               '    );\n' +
               '};\n' +
               '\n' +
-              'export default ZoomableImage;' +
-              '\n\n' +
-              'Стили от styled components:\n' +
-              'export const flexCenter = css`\n' +
+              'export default ZoomableImage; }}' +
+              'Стили от styled components:' +
+              '{{export const flexCenter = css`\n' +
               '    display: flex;\n' +
               '    align-items: center;\n' +
               '    justify-content: center;\n' +
@@ -98,11 +97,11 @@ export default {
               '    height: auto;\n' +
               '    max-width: 100%;\n' +
               '    max-height: 100%;\n' +
-              '`;' +
+              '`;}}' +
               '\n\n' +
               '' +
               'ВАНИЛА:\n' +
-              'import React, { useState } from \'react\';\n' +
+              '{{import React, { useState } from \'react\';\n' +
               'import styles from \'./ZoomableImage.module.css\';\n' +
               '\n' +
               'const ZoomableImage = ({ src, alt, className = \'\' }) => {\n' +
@@ -176,11 +175,11 @@ export default {
               '    cursor: zoom-out;\n' +
               '    z-index: 20;\n' +
               '    composes: flexCenter;\n' +
-              '}\n'
+              '} }}'
         },
         {
           summary: 'css шаблоны STYLED COMPONENTS или MUI',
-          content: 'import {css} from "styled-components";\n' +
+          content: '{{import {css} from "styled-components";\n' +
               'ИЛИ\n' +
               'import { css } from \'@emotion/react\';\n' +
               '\n' +
@@ -390,11 +389,11 @@ export default {
               '  &:hover {\n' +
               '    background-color: darken(${colors.accent}, 10%);\n' +
               '  }\n' +
-              '`;\n'
+              '`;}}'
         },
         {
             summary: 'css шаблоны VANILLA MODULE CSS',
-            content: '/* colors.css */\n' +
+            content: '{{/* colors.css */\n' +
                 ':root {\n' +
                 '  --main-color: #351C0F;\n' +
                 '  --main-rgb: 53, 28, 15;\n' +
@@ -601,11 +600,11 @@ export default {
                 '  .media-desktop {\n' +
                 '    /* Add desktop-specific styles here */\n' +
                 '  }\n' +
-                '}\n'
+                '} }}'
         },
         {
             summary: 'css шаблоны LESS и SASS',
-            content: '/* colors.less */\n' +
+            content: '{{/* colors.less */\n' +
                 '@main-color: #351C0F;\n' +
                 '@main-rgb: 53, 28, 15;\n' +
                 '@secondary-color: #E9E9E9;\n' +
@@ -698,11 +697,11 @@ export default {
                 '  .media-tablet {\n' +
                 '    /* Tablet-specific styles */\n' +
                 '  }\n' +
-                '}',
+                '} }}',
         },
         {
             summary: 'css шаблоны SASS',
-            content: '@import "src/styles/variables"\n' +
+            content: '{{@import "src/styles/variables"\n' +
                 '\n' +
                 '// флекс центрирование\n' +
                 '@mixin justify-center-around\n' +
@@ -863,12 +862,12 @@ export default {
                 '\n' +
                 '// альфа каналы\n' +
                 '$alpha-channel-light: rgba(255, 255, 255, 0.8)\n' +
-                '$alpha-channel-dark: rgba(0, 0, 0, 0.8)\n',
+                '$alpha-channel-dark: rgba(0, 0, 0, 0.8) }}',
         },
         {
             summary: 'components requests',
             content: 'JS\n' +
-                'import {useEffect, useState} from \'react\';\n' +
+                '{{import {useEffect, useState} from \'react\';\n' +
                 '\n' +
                 'export const useFetch = (url, options = {}) => {\n' +
                 '    const [data, setData] = useState([]);\n' +
@@ -896,10 +895,9 @@ export default {
                 '    }, []);\n' +
                 '\n' +
                 '    return {data, error, loading};\n' +
-                '};\n' +
-                '\n' +
+                '}; }}' +
                 'TS\n' +
-                'import {useState, useEffect} from "react";\n' +
+                '{{import {useState, useEffect} from "react";\n' +
                 '\n' +
                 'export interface ObjectWithUnknownValue {\n' +
                 '    [key: string]: unknown;\n' +
@@ -935,11 +933,11 @@ export default {
                 '    }, [url, options]);\n' +
                 '\n' +
                 '    return {data, error, isLoading};\n' +
-                '};',
+                '}; }}',
         },
         {
             summary: 'components buttons (JS + SASS)',
-            content: 'import React from "react";\n' +
+            content: '{{import React from "react";\n' +
                 '\n' +
                 'const Button = ({children,func,customClasses = \'\'}) => {\n' +
                 '  return <button\n' +
@@ -950,9 +948,9 @@ export default {
                 '  </button>\n' +
                 '};\n' +
                 '\n' +
-                'export default Button;\n' +
+                'export default Button; }}' +
                 '\n' +
-                'import React from \'react\';\n' +
+                '{{import React from \'react\';\n' +
                 'import classes from \'./Buttons.module.sass\';\n' +
                 '\n' +
                 'const IconButton = ({label, icon, isBefore = true, onClick, className = \'\'}) => {\n' +
@@ -987,9 +985,9 @@ export default {
                 '    );\n' +
                 '};\n' +
                 '\n' +
-                'export default IconButton;\n' +
+                'export default IconButton; }}' +
                 '\n' +
-                '@import "src/styles/mixins"\n' +
+                '{{@import "src/styles/mixins"\n' +
                 '@import "src/styles/variables"\n' +
                 '\n' +
                 '.icon_button\n' +
@@ -1013,11 +1011,11 @@ export default {
                 '  @media(hover: hover)\n' +
                 '    &:hover\n' +
                 '      padding: 10px 20px\n' +
-                '      border: 1px solid $secondary-light'
+                '      border: 1px solid $secondary-light }}'
         },
         {
           summary: 'components buttons (TS + STYLED COMPONENTS)',
-          content: 'import React,{FC} from \'react\';\n' +
+          content: '{{import React,{FC} from \'react\';\n' +
               'import styled from "styled-components";\n' +
               'import {colors, flexCenter} from "../../styles/styles";\n' +
               '\n' +
@@ -1076,11 +1074,11 @@ export default {
               '    )\n' +
               '}\n' +
               '\n' +
-              'export default IconButton;'
+              'export default IconButton; }}'
         },
         {
             summary: 'components navigation (JS + SASS)',
-            content: 'import React from \'react\';\n' +
+            content: '{{import React from \'react\';\n' +
                 'import classes from \'./Navigation.module.sass\';\n' +
                 'import {useLocation} from "react-router-dom";\n' +
                 'import {HashLink} from "react-router-hash-link";\n' +
@@ -1109,9 +1107,9 @@ export default {
                 '    );\n' +
                 '};\n' +
                 '\n' +
-                'export default Navigation;\n' +
-                '\n' +
-                '@import "src/styles/mixins"\n' +
+                'export default Navigation; }}' +
+
+                '{{ @import "src/styles/mixins"\n' +
                 '@import "src/styles/variables"\n' +
                 '\n' +
                 '@keyframes enlarge\n' +
@@ -1144,11 +1142,11 @@ export default {
                 '\n' +
                 '.active\n' +
                 '  pointer-events: none\n' +
-                '  opacity: 0.3'
+                '  opacity: 0.3 }}'
         },
         {
             summary: 'components (TS + SASS)',
-            content: 'import React from \'react\';\n' +
+            content: '{{import React from \'react\';\n' +
                 'import classes from \'./Navigation.module.sass\';\n' +
                 'import { useLocation } from "react-router-dom";\n' +
                 'import { HashLink } from "react-router-hash-link";\n' +
@@ -1182,12 +1180,12 @@ export default {
                 '  );\n' +
                 '};\n' +
                 '\n' +
-                'export default Navigation;\n'
+                'export default Navigation; }}'
         },
         {
             summary: 'components images (JS + SASS)',
             content: 'SCROLABLE IMAGE\n' +
-                'import React from \'react\';\n' +
+                '{{import React from \'react\';\n' +
                 'import classes from \'./ScrollableImage.module.sass\';\n' +
                 '\n' +
                 'const ScrollableImage = ({src = \'#\', alt = \'image\', className = \'\'}) => {\n' +
@@ -1204,9 +1202,8 @@ export default {
                 '    );\n' +
                 '};\n' +
                 '\n' +
-                'export default ScrollableImage;\n' +
-                '\n' +
-                '@import "src/styles/mixins"\n' +
+                'export default ScrollableImage; }}' +
+                '{{@import "src/styles/mixins"\n' +
                 '@import "src/styles/variables"\n' +
                 '\n' +
                 '.image_block\n' +
@@ -1214,10 +1211,9 @@ export default {
                 '  height: 100%\n' +
                 '  overflow: auto\n' +
                 '  img\n' +
-                '    width: 100%\n' +
-                '\n' +
-                'TOOLTIPED IMAGE\n' +
-                'import React from \'react\';\n' +
+                '    width: 100%}}' +
+                'TOOLTIPED IMAGE' +
+                '{{import React from \'react\';\n' +
                 'import classes from \'./TooltopedImage.module.sass\';\n' +
                 'import {Tooltip} from "@mui/material";\n' +
                 '\n' +
@@ -1235,15 +1231,14 @@ export default {
                 '                src={image}\n' +
                 '                alt={alt || title || image}\n' +
                 '                className={classes.image}\n' +
-                '                style={isImageSkills && {width: `${skillsCount * 40}px`}}\n' +
+                '                style={isImageSkills && {width: `${skillsCount * 40}px`} }\n' +
                 '            />\n' +
                 '        </Tooltip>\n' +
                 '    );\n' +
                 '};\n' +
                 '\n' +
-                'export default TooltipedImage;\n' +
-                '\n\n' +
-                '.image\n' +
+                'export default TooltipedImage;}}' +
+                '{{.image\n' +
                 '  height: 40px\n' +
                 '  transition: transform 0.2s ease-in-out\n' +
                 '  @media(hover: hover)\n' +
@@ -1251,10 +1246,9 @@ export default {
                 '      transform: scale(1.1)\n' +
                 '  @media(hover: none)\n' +
                 '    &:active\n' +
-                '      transform: scale(1.1)\n' +
-                '\n\n' +
-                'ZOOMABLE IMAGE\n' +
-                'import React, { useState } from \'react\';\n' +
+                '      transform: scale(1.1) }}' +
+                'ZOOMABLE IMAGE' +
+                '{{import React, { useState } from \'react\';\n' +
                 'import classes from \'./ZoomableImage.module.sass\';\n' +
                 '\n' +
                 'const ZoomableImage = ({src, alt, className = \'\'}) => {\n' +
@@ -1293,9 +1287,8 @@ export default {
                 '    );\n' +
                 '};\n' +
                 '\n' +
-                'export default ZoomableImage;\n' +
-                '\n' +
-                '@import "src/styles/mixins"\n' +
+                'export default ZoomableImage;}}' +
+                '{{@import "src/styles/mixins"\n' +
                 '@import "src/styles/variables"\n' +
                 '\n' +
                 '.overlay\n' +
@@ -1332,12 +1325,12 @@ export default {
                 '    z-index: 9999\n' +
                 '    img\n' +
                 '      @include imageDefault\n' +
-                '      object-fit: contain'
+                '      object-fit: contain }}'
         },
         {
             summary: 'components images (JS + SASS)',
             content: 'SCROLABLE IMAGE\n' +
-                'import React from \'react\';\n' +
+                '{{import React from \'react\';\n' +
                 'import classes from \'./ScrollableImage.module.sass\';\n' +
                 '\n' +
                 'interface ScrollableImageProps {\n' +
@@ -1358,9 +1351,8 @@ export default {
                 '  );\n' +
                 '};\n' +
                 '\n' +
-                'export default ScrollableImage;\n' +
-                '\n' +
-                '@import "src/styles/mixins"\n' +
+                'export default ScrollableImage; }}' +
+                '{{@import "src/styles/mixins"\n' +
                 '@import "src/styles/variables"\n' +
                 '\n' +
                 '.image_block\n' +
@@ -1368,10 +1360,9 @@ export default {
                 '  height: 100%\n' +
                 '  overflow: auto\n' +
                 '  img\n' +
-                '    width: 100%\n' +
-                '\n' +
+                '    width: 100% }}' +
                 'TOOLTIPED IMAGE\n' +
-                'import React from \'react\';\n' +
+                '{{import React from \'react\';\n' +
                 'import classes from \'./TooltopedImage.module.sass\';\n' +
                 'import {Tooltip} from "@mui/material";\n' +
                 '\n' +
@@ -1401,15 +1392,15 @@ export default {
                 '        src={image}\n' +
                 '        alt={alt || title || image}\n' +
                 '        className={classes.image}\n' +
-                '        style={isImageSkills && { width: `${skillsCount * 40}px` }}\n' +
+                '        style={isImageSkills && { width: `${skillsCount * 40}px`} }\n' +
                 '      />\n' +
                 '    </Tooltip>\n' +
                 '  );\n' +
                 '};\n' +
                 '\n' +
-                'export default TooltipedImage;\n' +
+                'export default TooltipedImage;}}' +
                 '\n\n' +
-                '.image\n' +
+                '{{.image\n' +
                 '  height: 40px\n' +
                 '  transition: transform 0.2s ease-in-out\n' +
                 '  @media(hover: hover)\n' +
@@ -1417,10 +1408,9 @@ export default {
                 '      transform: scale(1.1)\n' +
                 '  @media(hover: none)\n' +
                 '    &:active\n' +
-                '      transform: scale(1.1)\n' +
-                '\n\n' +
+                '      transform: scale(1.1)}}' +
                 'ZOOMABLE IMAGE\n' +
-                'import React, { useState } from \'react\';\n' +
+                '{{import React, { useState } from \'react\';\n' +
                 'import classes from \'./ZoomableImage.module.sass\';\n' +
                 '\n' +
                 'interface ZoomableImageProps {\n' +
@@ -1458,9 +1448,8 @@ export default {
                 '  );\n' +
                 '};\n' +
                 '\n' +
-                'export default ZoomableImage;\n' +
-                '\n' +
-                '@import "src/styles/mixins"\n' +
+                'export default ZoomableImage; }}' +
+                '{{@import "src/styles/mixins"\n' +
                 '@import "src/styles/variables"\n' +
                 '\n' +
                 '.overlay\n' +
@@ -1497,11 +1486,11 @@ export default {
                 '    z-index: 9999\n' +
                 '    img\n' +
                 '      @include imageDefault\n' +
-                '      object-fit: contain'
+                '      object-fit: contain }}'
         },
         {
             summary: 'components loading spinner (JS + STYLED COMPONENTS)',
-            content: 'import React from "react";\n' +
+            content: '{{import React from "react";\n' +
                 'import { CircularProgress } from "@mui/material";\n' +
                 'import { styled } from "styled-components";\n' +
                 '\n' +
@@ -1520,11 +1509,11 @@ export default {
                 '  );\n' +
                 '};\n' +
                 '\n' +
-                'export default LoadingSpinner;\n'
+                'export default LoadingSpinner; }}'
         },
         {
             summary: 'components loading spinner (TS + STYLED COMPONENTS)',
-            content: 'import React,{FC} from "react";\n' +
+            content: '{{import React,{FC} from "react";\n' +
                 'import {CircularProgress} from "@mui/material";\n' +
                 'import {styled} from "styled-components";\n' +
                 '\n' +
@@ -1546,11 +1535,11 @@ export default {
                 '  )\n' +
                 '};\n' +
                 '\n' +
-                'export default LoadingSpinner;'
+                'export default LoadingSpinner; }}'
         },
         {
             summary: 'components modal (JS + COMPONENTS + REACT ROUTER DOM)',
-            content: 'import React, { Fragment } from \'react\';\n' +
+            content: '{{import React, { Fragment } from \'react\';\n' +
                 'import styled from "styled-components";\n' +
                 'import { useLocation, useNavigate } from "react-router-dom";\n' +
                 'import { colors, flexCenter, flexCenter_column, justifyCenter_between, center_absolute } from "../../styles/styles";\n' +
@@ -1630,11 +1619,11 @@ export default {
                 '    );\n' +
                 '};\n' +
                 '\n' +
-                'export default Modal;\n'
+                'export default Modal; }}'
         },
         {
             summary: 'components modal (TS + STYLED COMPONENTS + REACT ROUTE DOM)',
-            content: 'import React,{FC,Fragment,ReactElement} from \'react\';\n' +
+            content: '{{import React,{FC,Fragment,ReactElement} from \'react\';\n' +
                 'import styled from "styled-components";\n' +
                 'import {useLocation,useNavigate} from "react-router-dom";\n' +
                 'import {colors,flexCenter,flexCenter_column,justifyCenter_between,center_absolute} from "../../styles/styles";\n' +
@@ -1719,7 +1708,7 @@ export default {
                 '        )\n' +
                 '};\n' +
                 '\n' +
-                'export default Modal;'
+                'export default Modal; }}'
         },
     ]
 }
