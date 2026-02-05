@@ -15,16 +15,6 @@ const formatter = {
     },
     auto: [
         {
-            pattern: /\[\[([\s\S]*?)\]\]/g,
-            startMark: '[CODE_BLOCK_START]',
-            endMark: '[CODE_BLOCK_END]',
-            mark(content) {
-                return this.startMark + content + this.endMark;
-            },
-            markerPattern: /\[CODE_BLOCK_START\]([\s\S]*?)\[CODE_BLOCK_END\]/g,
-            template: (content) => `<pre style="background: #1e1e1e; color: #d4d4d4; padding: 15px; border-radius: 6px; white-space: pre; font-family: monospace; overflow-x: auto;">${content.trim()}</pre>`,
-        },
-        {
             pattern: /\{\{([\s\S]*?)\}\}/g,
             startMark: '[COPY_BLOCK_START]',
             endMark: '[COPY_BLOCK_END]',
@@ -84,8 +74,8 @@ const createNavigation = (allData) => {
         });
 
         document.querySelector('#toggleAll').textContent = shouldOpen
-            ? 'Закрыть всё'
-            : 'Открыть всё';
+            ?'Закрыть всё'
+            :'Открыть всё';
     });
 
 

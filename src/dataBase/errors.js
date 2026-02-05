@@ -103,7 +103,7 @@ export default {
               'РЕШЕНИЕ\n' +
               'Если есть файл vite.config.js то указать там base с ссылкой на сайт.\n' +
               'Например так' +
-              '[[import { defineConfig } from \'vite\';\n' +
+              '{{import { defineConfig } from \'vite\';\n' +
               '\n' +
               'export default defineConfig({\n' +
               '    root: \'./\',\n' +
@@ -115,7 +115,7 @@ export default {
               '    server: {\n' +
               '        port: 3000,\n' +
               '    },\n' +
-              '});]]',
+              '});}}',
         },
         {
           summary: 'Ошибка при деплое vite проекта 2',
