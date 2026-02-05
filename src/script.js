@@ -49,6 +49,18 @@ const createNavigation = (allData) => {
         id: item.id,
         title: item.navTitle
     }));
+    const toggleAllFunc = () => {
+        const allDetails = document.querySelectorAll('sl-details');
+        const shouldOpen = Array.from(allDetails).some(details => !details.open);
+
+        allDetails.forEach(details => {
+            details.open = shouldOpen;
+        });
+
+        document.querySelector('#toggleAll').textContent = shouldOpen
+            ? 'Закрыть всё'
+            : 'Открыть всё';
+    }
 
     navigation.forEach((navItem) => {
         const li = document.createElement('li');
@@ -66,18 +78,8 @@ const createNavigation = (allData) => {
     toggleAll.innerText = 'Открыть всё';
     nav.appendChild(toggleAll)
     toggleAll.addEventListener('click', () => {
-        const allDetails = document.querySelectorAll('sl-details');
-        const shouldOpen = Array.from(allDetails).some(details => !details.open);
-
-        allDetails.forEach(details => {
-            details.open = shouldOpen;
-        });
-
-        document.querySelector('#toggleAll').textContent = shouldOpen
-            ?'Закрыть всё'
-            :'Открыть всё';
+        toggleAllFunc();
     });
-
 
     const toggleMenu = document.createElement('sl-button');
     toggleMenu.id = 'toggle-menu';
@@ -88,6 +90,45 @@ const createNavigation = (allData) => {
     toggleMenu.addEventListener('click', () => {
         nav.classList.toggle('closed');
     });
+
+    const onKeyDown = (event) => {
+        const prevHash = () => {
+            const nowHash = window.location.hash
+            navigation.forEach((navItem, index) => {
+                if (nowHash === '#' + navItem.id)
+                    index === 0
+                        ?window.location.hash = '#' + navigation[navigation.length - 1].id
+                        :window.location.hash = '#' + navigation[index-1].id
+            })
+        };
+        const nextHash = () => {
+            const nowHash = window.location.hash
+            navigation.forEach((navItem, index) => {
+                if (nowHash === '#' + navItem.id)
+                    index === navigation.length - 1
+                        ?window.location.hash = '#' + navigation[0].id
+                        :window.location.hash = '#' + navigation[index+1].id
+            })
+        };
+
+        const key = event.key.toLowerCase();
+        switch (key) {
+            case ',':
+            case 'б':
+                prevHash()
+                break;
+            case '.':
+            case 'ю':
+                nextHash()
+                break;
+            case 'ь':
+            case 'm':
+                toggleAllFunc();
+                break;
+        }
+    };
+
+    window.addEventListener('keydown', onKeyDown);
 }
 
 const createSections = (allData) => {
@@ -116,7 +157,7 @@ const createSections = (allData) => {
                     parts[i] = formatter.raw.startMark + parts[i] + formatter.raw.endMark;
                 } else {
                     parts[i] = formatter.auto.reduce((text, rule) =>
-                        text.replace(rule.pattern, (match, content) => rule.mark(content))
+                            text.replace(rule.pattern, (match, content) => rule.mark(content))
                         , parts[i]);
                 }
             }
@@ -128,8 +169,8 @@ const createSections = (allData) => {
             let safeHtml = tempDiv.innerHTML;
 
             safeHtml = formatter.auto.reduce((text, rule) =>
-                text.replace(rule.markerPattern, (match, content) => rule.template(content))
-            , safeHtml)
+                    text.replace(rule.markerPattern, (match, content) => rule.template(content))
+                , safeHtml)
                 .replace(formatter.raw.markerPattern, (match, raw) => formatter.raw.template(raw));
 
             // не допускаем более двух отступов
