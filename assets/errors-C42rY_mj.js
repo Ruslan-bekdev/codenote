@@ -52,7 +52,7 @@ origin: Это имя удалённого репозитория (по умол
 Дело в том, что импорты и экспорты можно использовать только в модульных скриптах`},{summary:"Ошибка при деплое vite проекта",content:`!!!!1. Не удалось воспроизвести медиа. Нет декодеров для запрошенных форматов: text/html
 2. HTTP «Content-Type» типа «text/html» не поддерживается. Не удалось загрузить медиаресурс http://localhost:5173/. !!!!РЕШЕНИЕ
 Если есть файл vite.config.js то указать там base с ссылкой на сайт.
-Например так[[import { defineConfig } from 'vite';
+Например так{{import { defineConfig } from 'vite';
 
 export default defineConfig({
     root: './',
@@ -64,7 +64,7 @@ export default defineConfig({
     server: {
         port: 3000,
     },
-});]]`},{summary:"Ошибка при деплое vite проекта 2",content:`!!!!x Build failed in 2.41s
+});}}`},{summary:"Ошибка при деплое vite проекта 2",content:`!!!!x Build failed in 2.41s
 error during build:
 [vite:esbuild-transpile] The service was stopped
     at C:\\Users\\Zooppio\\WebstormProjects\\codenote\\node_modules\\esbuild\\lib\\main.js:737:38
@@ -134,4 +134,4 @@ FATAL ERROR: Zone Allocation failed - process out of memory
 "2"="00000419"
 
 [-HKEY_USERS\\.DEFAULT\\Keyboard Layout\\Substitutes] }}`}]};export{n as default};
-//# sourceMappingURL=errors-B-M3W8N8.js.map
+//# sourceMappingURL=errors-C42rY_mj.js.map
